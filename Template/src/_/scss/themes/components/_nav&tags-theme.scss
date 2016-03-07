@@ -1,0 +1,118 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .tag
+2.  / .pagination-item
+3.  / .um_tabs
+4.  / .um_tab
+5.  / .tab-target
+6.  / .feedback-block
+
+-------------------------------------------------------------------*/
+
+.tag{
+	transition: background 0.3s ease;
+	background: #ece5f7;
+	color: #4d4353;
+	font-weight: bold;
+	.btn-closebtn{
+		color: #4d4353;
+	}
+	&:hover{
+		background: #c9bfd8;
+	}
+
+	&:active{
+		transition: none;
+		background: darken(#c9bfd8, 10%);
+	}
+}
+
+// color styling
+.pagination-item{
+	.btn-text{color: $color-main-text}
+
+	&:hover{
+		.btn-text{color: $color-main-text}
+	}
+	
+	&:before {
+		background: $gradient-main-click;			
+	}
+
+	&.active{
+		span, &:hover span{
+			font-weight: bold;
+			background: none;
+			color: $color-main-text;
+		}
+	}
+
+	&.arrow{
+		@extend .btn-arrow;
+	}
+
+	&.to-start, &.to-end{
+		.btn-text{
+			color: $color-main-text
+		}
+	}
+	
+	&.disabled{
+		opacity: .6;
+		background:none;
+
+		&:before {background: none;box-shadow: none;}
+		.btn-text, .btn-text:before{
+			background: none;
+			color: #aaa;
+		}
+	}
+
+}
+
+.um_tabs{
+
+	border-bottom-color: #d1cce9;
+
+	&:before {
+		background: $gradient-main-click;
+	}
+
+	.tabs-text{
+		color: #504a53;
+	}
+}
+.um_tab{
+
+	&:before {
+		background: $gradient-main-click;			
+	}
+
+	&:after {background:white;}
+
+	&.active{
+		pointer-events: none;
+		cursor: default;
+		background: none;
+	}
+
+	&:not(.active){
+		background: none;
+	}
+}
+
+.tab-target{
+	background: #fff;
+}
+
+.feedback-block{
+	.date{
+		color: #615b65;
+	}
+
+	p{
+		color: #2b262e;
+	}
+}

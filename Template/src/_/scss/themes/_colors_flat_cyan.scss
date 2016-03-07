@@ -1,0 +1,62 @@
+// main colors
+$color-main: #1abc9c;
+$color-main-light: #5BE2C7;
+$color-main-dark: #16a085;
+$color-main-light-gray: #024235;
+$color-main-dark-gray: red;
+$color-main-text: #555;
+$color-main-text-shadow: $color-main-light-gray;
+$color-main-hover-light: $color-main-light+#111;
+$color-main-hover-dark: $color-main-dark+#111;
+$color-main-click-light: $color-main;
+$color-main-click-dark: $color-main-light-gray;
+$gradient-main: $color-main;
+$gradient-main-hover: $color-main-light;
+$gradient-main-click: $color-main-click-light;
+$color-btn-text: $color-main-light-gray;
+
+$divider-line: $color-main;
+
+// border colors
+$color-border-light: blue;
+$color-border-dark: blue;
+$gradient-border: $color-main-light;
+
+$color-border-hover-light: $color-main-hover-light;
+$color-border-hover-dark: $color-main-hover-light;
+$gradient-border-hover: $color-main-hover-light;
+
+
+$color-border-click-light: $color-main-click-light;
+$color-border-click-dark: $color-main-click-light;
+$gradient-border-click: $color-main-click-light;
+
+//
+$gradient-input-border: $color-main-light-gray;
+
+$gradient-scrollbar-click: $color-main;
+
+$select-text: #333;
+
+$catalog-menu-item-lvl1: $color-main-dark;
+
+$gradient-header-bg: linear-gradient(to right, #024235, #5BE2C7 50%, #024235);
+
+$color-disabled-text: #c1c1c1;
+$color-disabled-bg: #e8e8e8;
+$gradient-disabled: #e8e8e8;
+$gradient-disabled-border: #c1c1c1;
+
+// buutons colors
+$gradient-silver: $color-main-light;
+$gradient-silver-hover: $color-main-hover-light;
+$gradient-silver-click: $color-main;
+$gradient-silver-border: $color-main-light;
+$gradient-silver-border-hover: $color-main-hover-light;
+$gradient-silver-border-click: $color-main;
+$color-silver-shadow: red;
+$color-alphabet-text: $color-main-dark;
+
+// tab text colors
+$color-tab-text: $color-main-light-gray;
+$color-tab-text_active: $color-main-light-gray;

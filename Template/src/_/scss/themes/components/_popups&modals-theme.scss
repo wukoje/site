@@ -1,0 +1,328 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .btn-close-modal
+2.  / #settings-panel
+3.  / .theme-demo
+4.  / .apparel-popup
+5.  / .city-select-panel
+6.  / .city-select-panel
+7.  / .form-success, .form-fail
+8.  / .form-fail
+9.  / #order-details-container
+10.  / .popup-on-buy
+11.  / .added2basket
+12.  / #ajax-search-popup
+13.  / .ajax-search-item
+
+-------------------------------------------------------------------*/
+
+.btn-close-modal{
+	background-color: $color-main-dark;
+	&:hover{ background-color: $color-main-hover-dark;}
+	&:active{ background-color: $color-main-click-dark;}
+}
+#settings-panel{
+	
+	.settings-close.btn-close-modal{
+		@extend %gradiented;
+		@extend %maingradient-btntext;
+	}
+}
+
+.theme-demo{
+	&.skeuomorphism-style>div{
+		box-shadow: inset 0 1px rgba(255,255,255,0.30);
+		&:before{display: none;}
+		&:active{
+			box-shadow: inset 0px 2px 5px 0px fade-out(#000, 0.4);
+		}
+	}
+	&.black>div{
+		color: $color-blue-text;
+		text-shadow: 0px 1px 1px $color-black-text-shadow;
+		background: $gradient-black;
+		&:hover{ 
+			background: $gradient-black-hover;
+		}
+		&:active{
+			background: $gradient-black-click;
+		}
+	}
+
+	&.blue>div{
+		color: $color-blue-text;
+		text-shadow: 0px 1px 1px $color-blue-text-shadow;
+		background: $gradient-blue;
+		&:hover{ 
+			background: $gradient-blue-hover;
+		}
+		&:active{
+			background: $gradient-blue-click;
+		}
+	}
+
+	&.green>div{
+		color: $color-green-text;
+		text-shadow: 0px 1px 1px $color-green-text-shadow;
+		background: $gradient-green;
+		&:hover{ 
+			background: $gradient-green-hover;
+		}
+		&:active{
+			background: $gradient-green-click;
+		}
+	}
+	&.purple>div{ 
+		color: $color-purple-text;
+		text-shadow: 0px 1px 1px $color-purple-text-shadow;
+		background: $gradient-purple;
+		&:hover{ 
+			background: $gradient-purple-hover;
+		}
+		&:active{
+			background: $gradient-purple-click;
+		}
+	}
+	&.red>div{ 
+		color: $color-red-text;
+		text-shadow: 0px 1px 1px $color-red-text-shadow;
+		background: $gradient-red;
+		&:hover{ 
+			background: $gradient-red-hover;
+		}
+		&:active{
+			background: $gradient-red-click;
+		}
+	}
+	&.yellow>div{ 
+		color: $color-yellow-text;
+		text-shadow: 0px 1px 1px $color-yellow-text-shadow;
+		background: $gradient-yellow;
+		&:hover{ 
+			background: $gradient-yellow-hover;
+		}
+		&:active{
+			background: $gradient-yellow-click;
+		}
+	}
+	&.babyboom>div{ 
+		color: $color-babyboom-text;
+		text-shadow: 0px 1px 1px $color-babyboom-text-shadow;
+		background: $gradient-babyboom;
+		&:hover{ 
+			background: $gradient-babyboom-hover;
+		}
+		&:active{
+			background: $gradient-babyboom-click;
+		}
+	}
+	&.babyboom2>div{ 
+		color: $color-bb2-text;
+		text-shadow: 0px 1px 1px $color-bb2-text-shadow;
+		background: $gradient-bb2;
+		&:hover{ 
+			background: $gradient-bb2-hover;
+		}
+		&:active{
+			background: $gradient-bb2-click;
+		}
+	}
+	
+	&.flat_black>div{
+		text-shadow: 0px 1px 1px $color-black-text-shadow;
+		background: $color-flat-black;
+		&:hover{ 
+			background: $color-flat-black-hover;
+		}
+	}
+
+	&.flat_blue>div{
+		text-shadow: 0px 1px 1px $color-blue-text-shadow;
+		background: $color-flat-lightblue;
+		&:hover{ 
+			background: $color-flat-lightblue-hover;
+		}
+	}
+
+	&.flat_cyan>div{
+		text-shadow: 0px 1px 1px $color-green-text-shadow;
+		background: $color-flat-cyan;
+		&:hover{ 
+			background: $color-flat-cyan-hover;
+		}
+	}
+	&.flat_purple>div{ 
+		text-shadow: 0px 1px 1px $color-purple-text-shadow;
+		background: $color-flat-purple;
+		&:hover{ 
+			background: $color-flat-purple-hover;
+		}
+	}
+	&.flat_red>div{ 
+		text-shadow: 0px 1px 1px $color-red-text-shadow;
+		background: $color-flat-red;
+		&:hover{ 
+			background: $color-flat-red-hover;
+		}
+	}
+	&.flat_yellow>div{ 
+		text-shadow: 0px 1px 1px $color-yellow-text-shadow;
+		background: $color-flat-yellow;
+		&:hover{ 
+			background: $color-flat-yellow-hover;
+		}
+	}
+
+	&.active{
+		&>div{
+			outline: 2px solid black;
+			outline-offset: 4px;
+			&:before{display: none;}
+		}
+		&.blue>div{
+			background: $gradient-blue-click;
+			&:before{ background: $gradient-blue-border-click;}
+		}
+
+		&.black>div{
+			background: $gradient-black-click;
+			&:before{ background: $gradient-black-border-click;}
+		}
+
+		&.green>div{
+			background: $gradient-green-click;
+			&:before{ background: $gradient-green-border-click;}
+		}
+		&.purple>div{ 
+			background: $gradient-purple-click;
+			&:before{ background: $gradient-purple-border-click;}
+		}
+		&.red>div{ 
+			background: $gradient-red-click;
+			&:before{ background: $gradient-red-border-click;}
+		}
+		&.yellow>div{ 
+			background: $gradient-yellow-click;
+			&:before{ background: $gradient-yellow-border-click;}
+		}
+		&.babyboom>div{ 
+			background: $gradient-babyboom-click;
+			&:before{ background: $gradient-babyboom-border-click;}
+		}
+		&.babyboom2>div{ 
+			background: $gradient-bb2-click;
+			&:before{ background: $gradient-bb2-border-click;}
+		}
+	}/* &.active */
+}/* .theme-demo */
+
+.apparel-popup{
+	color: #000;
+	background: #f3f5f4;
+	border-color:$color-main-dark;
+	// box-shadow: 2px 2px 4px fade-out($color-silver-shadow, 0.72);
+}
+.city-select-panel{
+	
+	.current-city{
+		color: $color-main-dark;
+	}
+	
+
+	li:not(.active) span{
+		color: #0a63c7;
+		border-bottom-color: fade-out(#0a63c7, 0.5);
+		&:hover{
+			color: $color-main-dark;
+			border-bottom-color: transparent;
+		}
+		&:active{
+			color: $color-main-click-dark;
+		}
+	}
+	li.active span{
+		border-color: transparent;
+		color: $color-main-dark;
+	}
+
+	.btn-city-close.btn-close-modal{
+		@extend %gradiented;
+		@extend %maingradient-btntext;
+	}
+}
+
+.form-success, .form-fail{
+	@extend %silver-normal-state;
+	&:before{
+		background: #41970e;
+	}
+	color: #3c7d23;
+	box-shadow: 0px 1px 4px fade-out(#393043, 0.43);
+
+	span[class*="flaticon"]:before{
+		color: #41970e;
+	}
+}
+.form-fail{ 
+	&:before{
+		background: #a52923;
+	}
+	color: #921a1a;
+	span[class*="flaticon"]:before{
+		color: #a52923;
+	}
+}
+
+#order-details-container{
+	.um_popup-content{
+		border-color: $color-main-dark;
+		box-shadow: 0px 1px 8px fade-out(#393043, 0.72);
+	}
+}
+
+.popup-on-buy{
+	color: darken(red, 10%);
+	background: lighten(red, 35%);
+	border-color: darken(red, 10%);
+
+	&:before{
+		border-bottom-color: darken(red, 10%);
+	}
+	&:after{
+		border-bottom-color: lighten(red, 35%);
+	}
+
+}
+
+.added2basket{
+	background: #fff;
+	border: 2px solid $color-main-dark;
+}
+
+#ajax-search-popup{
+	background: #f3f5f4;
+	box-shadow: 0px 1px 4px fade-out($color-silver-shadow, 0.72);
+	.ajax-search-item:hover{
+		background: fade-out(#000, 0.9);
+	}
+	.ajax-search-item-name{
+		color: #000;
+		&, &:link, &:visited{
+			border-color: fade-out(#000, 0.5);
+		}
+		&:focus, &:hover{
+			border-color: transparent;
+		}
+		&:active{
+			border-color: #000;
+		}
+	}
+}
+
+.ajax-search-item{
+	& + &{
+		border-color: darken(#f3f5f4, 15%);
+	}
+}

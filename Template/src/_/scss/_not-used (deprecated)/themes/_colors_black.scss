@@ -1,0 +1,53 @@
+$color-main-light: #787878;//
+$color-main-dark: #383838;//
+$color-main-text: #fff;
+$color-main-text-shadow: #212121;//
+$color-main-hover-light: #aaa;//
+$color-main-hover-dark: #565656;//
+$color-main-click-light: #aaa;//
+$color-main-click-dark: #7a7a7a;//
+$gradient-main: linear-gradient($color-main-light, $color-main-dark);
+$gradient-main-hover: linear-gradient($color-main-hover-light, $color-main-hover-dark);
+$gradient-main-click: linear-gradient($color-main-click-dark, $color-main-click-light);
+
+$color-border-light: #666;//
+$color-border-dark: #111;//
+$gradient-border: linear-gradient($color-border-light, $color-border-dark);
+
+$color-border-hover-light: #787878;//
+$color-border-hover-dark: #242424;//
+$gradient-border-hover: linear-gradient($color-border-hover-light, $color-border-hover-dark);
+
+$color-border-click-light: #eeeeee;//
+$color-border-click-dark: #333333;//
+$gradient-border-click: linear-gradient($color-border-click-dark, $color-border-click-light);
+
+$gradient-input-border: linear-gradient(to right, $color-main-light, $color-main-dark);
+
+$gradient-scrollbar-click: linear-gradient(to bottom, #888, #333);
+
+$select-text: #999;//
+
+$catalog-menu-item-lvl1: #393939;
+
+$gradient-header-bg: url('../../img/patterns/gradient-header-bg-black.png');
+
+.main-menu-wrap .main-menu li a{color: $color-main-dark;}
+
+.icon_catalog-woman {background: url(../../img/icons/icon_catalog-woman-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-man {background: url(../../img/icons/icon_catalog-man-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-kid {background: url(../../img/icons/icon_catalog-kid-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-big-choice {background: url(../../img/icons/icon_catalog-big-choice-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-great-quality {background: url(../../img/icons/icon_catalog-great-quality-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-can-try {background: url(../../img/icons/icon_catalog-can-try-white.png) no-repeat 50% 50% !important;}
+
+.main-menu-wrap .main-menu > li > a{color: $color-main-dark;}
+.main-menu-wrap .main-menu > li:hover > a{color: $color-main-dark;}
+.main-menu-wrap .main-menu > li:active > a{color: $color-main-dark;}
+
+.icon_catalog-woman {background: url(../../img/icons/icon_catalog-woman-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-man {background: url(../../img/icons/icon_catalog-man-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-kid {background: url(../../img/icons/icon_catalog-kid-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-big-choice {background: url(../../img/icons/icon_catalog-big-choice-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-great-quality {background: url(../../img/icons/icon_catalog-great-quality-white.png) no-repeat 50% 50% !important;}
+.icon_catalog-can-try {background: url(../../img/icons/icon_catalog-can-try-white.png) no-repeat 50% 50% !important;}

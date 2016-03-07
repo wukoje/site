@@ -1,0 +1,40 @@
+<table class="basket-table basket-big">
+	<tfoot>
+		<tr>
+			<td class="clearfix" colspan="3">
+				<div class="coupon"><!-- no form here, because this table will be
+				inside big ordering form, and nested forms break validity-->
+					<label>
+						<span class="label-text">
+							I have a promocode:
+						</span>
+						<input type="text" class="textinput">
+					</label>
+				</div>
+				<div class="buy-block clearfix">
+					<table class="price-info">
+						<tr>
+							<td>Items for:</td>
+							<td><span class="totalprice1 price-usd">$225</span></td>
+						</tr>
+						<tr>
+							<td>Sales Tax:</td>
+							<td><span class="vat price-usd">0</span></td>
+						</tr>
+						<tr>
+							<td>Total:</td>
+							<td><span class="total-price2 price-usd">$225</span></td>
+						</tr>
+					</table>
+					<a href="order-step2.php" class="btn-buy medium"><span class="btn-text">Buy</span></a>
+				</div><!-- /buy-block -->
+			</td>
+		</tr>
+	</tfoot>
+	<tbody>
+		<?php include '_/html/elements/_basket-big-item.html'; ?>
+		<?php include '_/html/elements/_basket-big-item.html'; ?>
+		<?php include '_/html/elements/_basket-big-item-out-of-stock.html'; ?>
+		<?php include '_/html/elements/_basket-big-item.html'; ?>
+	</tbody>
+</table><!-- /basket-big -->

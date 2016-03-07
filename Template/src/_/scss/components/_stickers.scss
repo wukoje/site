@@ -1,0 +1,78 @@
+/*------------------------------------------------------------------
+Page partials - Stickers
+-------------------------------------------------------------------*/
+
+// Stickers on the photo of product. For example - NEW, SUPER, HIT...
+
+.sticker{
+	display: inline-block;
+	width: 42px;
+	position: relative;
+
+	text-align: center;
+	color: #000;
+	font-size: 10px;
+	text-transform: uppercase;
+
+	background: rgba(255,255,255,0.5);
+	border-radius: 5px;
+
+	&:before{
+		font-family: "Flaticon";
+		display: block;
+		top: 0;
+		font-size: 24px;
+		line-height: 30px;
+	}
+
+
+	&.super{
+
+		&:before{
+			content: "\e018";
+		}
+	}
+
+	&.discount{
+		&:before{
+			content: "\e026";
+			font-size: 34px;
+		}
+	}
+
+	&.gift{
+		font-size: 8px;
+		&:before{
+			content: "\e015";
+			font-size: 22px;
+		}
+	}
+
+	&.hit{
+		&:before{
+			content: "\e016";
+		}
+	}
+
+	&.new{
+		font-size: 8px;
+		&:before{
+			content: "\e01d";
+			font-size: 42px;
+		}
+	}
+
+	&.style{
+		&:before{
+			content: "\e024";
+			font-size: 36px;
+		}
+	}
+
+	&.musthave{
+		font-size: 7px;
+		&:before{
+			content: "\e00c";
+		}
+	}
+}

@@ -1,0 +1,48 @@
+/*------------------------------------------------------------------
+
+[Table of contents] - Theme for account page
+
+1.  / .favorite-item
+2.  / .account-order-history
+
+-------------------------------------------------------------------*/
+
+.favorite-item{
+	h4>a{
+		color: #0077e6;
+		border-bottom-color: fade-out(#0077e6, 0.5);
+
+		&:hover{
+			border-bottom-color: transparent;
+		}
+	}
+	p{ color: #9a90a0;}
+}
+
+.account-order-history{
+	border-bottom-color: #c1c1c1;
+	th{ border-bottom-color: #c1c1c1;}
+	tr:hover{
+		background: fade-out(#000, 0.9);
+	}
+	tr.head-row:hover{
+		background: none;
+	}
+	.order-number{
+		&>a{
+			transition: .4s;
+			border-bottom-color: fade-out(#1e7fd0, 0.6);
+			color: #1e7fd0;
+			&:hover, &.um_opened{
+				border-bottom-color: transparent;
+				color: #707477;
+			}
+		}/* a */
+	}/* .order-number */
+	
+	.order-status{ 
+		&.success{ color: #78d354;}
+		&.pending{ color: #c4c621;}
+		&.cancelled{ color: #c62121;}
+	}
+}/* .order-history */

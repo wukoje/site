@@ -1,0 +1,540 @@
+/*------------------------------------------------------------------
+Page partials - Popups & modals
+
+1. Close button of a modal / .btn-close-modal
+2. Button settings panel color scheme / .settings-wrap
+3. Settings panel color scheme / #settings-panel
+4. Selection bar of the city / .city-select-panel
+5. Success and fail forms / .form-success, .form-fail
+6. Modal form with photo galery on the product page / #modal-product-big-image
+7. Modal form / .modal-form
+8. Message about choice of color and size / .popup-on-buy
+9. Message about adding to cart / .added2basket
+10. Modal form with info about sizes / #modal_sizes-info
+11. Ajax-search-popup / #ajax-search-popup
+12. Ajax-search-item / .ajax-search-item
+
+-------------------------------------------------------------------*/
+
+.btn-close-modal{
+	width: 200px;
+	height: 44px;
+}
+
+.settings-wrap{
+	transition: .7s;
+	position: fixed;
+	-webkit-backface-visibility: hidden;
+	-webkit-transform: translateZ(0);
+	z-index: 999;
+	top: 100px;
+	left: -452px;
+	padding: 10px 0;
+	@media (max-width: 767px){
+		left: -260px;
+	}
+	&.um_container-opened{ left: 0;}
+}
+
+#settings-panel{
+	position: relative;
+	z-index: 1000;
+	overflow: auto;
+	padding: 5px;
+
+	width: 450px;
+
+	max-height: 480px;
+	text-align: center;
+	h3, p{
+		text-align: center;
+	}
+	h3{ 
+		font-weight: bold;
+		margin-top: 0;
+	}
+	ul{
+		list-style: none;
+		text-align: left;
+		padding: 0;
+		li{
+			display: inline-block;
+			width: 33%;
+		}
+	}
+	hr{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+	.theme-group {display: block;width: 100%;}
+	.theme-demo{
+		&.skeuomorphism-style div {border-radius: 3px;}
+		div{
+			@extend %btn-std;
+			&:active{ line-height: 43px;}
+			
+			display: inline-block;
+			vertical-align: middle;
+			width: 45px;
+			height: 45px;
+
+			line-height: 45px;
+			margin: 5px;
+			margin-right: 10px;
+			
+			font-size: 16px;
+			font-weight: bold;
+
+		}
+
+		&:hover{ cursor: pointer;}
+		&.active{
+			font-weight: bold;
+		}
+	}
+
+	.text{
+		vertical-align: middle;
+	}
+	.settings-close.btn-close-modal{
+		@extend %btn-std;
+		&:before{ border-radius: 4px;}
+		border-radius: 4px;
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 10px;
+	}
+
+	.btn-closebtn{
+		position: absolute;
+		right: 10px;
+		top: 10px;
+	}
+
+	@media (max-width: 767px){
+		width: 260px;
+		max-height: 300px;
+		.theme-demo{
+			text-align: center;
+			div{
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.text{ display: block;}
+		}
+	}
+}
+
+.city-select-panel{
+	// reset from parent's styles
+	font-family: Helvetica, Arial;
+	text-transform: none;
+
+	padding: 10px 30px 20px;
+	line-height: normal;
+	border-radius: 5px;
+
+	display: none;
+	position: relative;
+	z-index: 201;
+	width: 750px;
+	margin: auto;
+	@media (max-width: 767px){
+		width: 100%;
+	}
+	left: 0px;
+	top: 50px;
+
+	ul  {
+		columns: 3;
+	}
+
+	border: 1px solid;
+	text-align: center;
+
+	&:hover{ cursor: default;}
+	h3{
+		font-weight: bold;
+		text-align: left;
+	}
+	.form_city-name{
+		text-align: left;
+		label{
+			width: 100%;
+		}
+		.textinput{
+			width: 50%;
+		}
+	}
+	p{
+		text-align: left;
+		font-size: 16px;
+		margin-bottom: 15px;
+	}
+	.current-city{ font-weight: bold;}
+	ul{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: left;
+	}
+	li{
+		@media (max-width: 767px){
+			width: 50%;
+		}
+		min-height: 40px;
+		vertical-align: top;
+		margin-top: 5px;
+		
+		span{
+			transition: .4s;
+			border-bottom: 1px dotted;
+			&:hover{ cursor: pointer;}
+		}
+		margin-bottom: 0;
+	}
+	hr{
+		margin: 0px 0 10px;
+	}
+
+	.btn-closebtn{
+		position: absolute;
+		right: 15px;
+		top: 15px;
+	}
+	.btn-city-close.btn-close-modal{
+		@extend %btn-std;
+		padding: 10px 30px;
+		font-size: 16px;
+		font-weight: bold;
+		&:active{
+			padding-top: 11px;
+			padding-bottom: 9px;
+		}
+		&:before{
+			border-radius: 4px;
+		}
+		border-radius: 4px;
+		margin: 0 auto;
+	}
+	.active{
+		font-weight: bold;
+		font-size: 16px;
+		span { 
+			&:hover{ cursor: default;}
+		}
+	}
+}
+
+.form-success, .form-fail{
+	@extend %btn-std;
+	&:active{
+		padding-top: 0;
+	}
+	&:before{
+		border-radius: 4px;
+	}
+	position: absolute;
+	
+	top: 0;
+	bottom: 100px;
+	left: 0;
+	right: 0;
+	margin: auto;
+
+	width: 280px;
+	height: 130px;
+	
+	border-radius: 4px;
+	font-size: 14px;
+
+	.btn-closebtn{
+		position: absolute;
+		top: 7px;
+		right: 10px;
+		// text-decoration: none;
+	}
+	span[class*="flaticon"]{
+		display: block;
+		&:before{
+			margin: auto;
+			font-size: 60px;
+		}
+		
+		// margin-top: 20px;
+		// margin-bottom: 15px;
+	}
+}
+
+#modal-product-big-image{
+	.modal-content{
+		// it will have other width and height depending on img inside of it,
+		// but just in case of shit I'll set some default values here
+		width: 75%;
+		height: 75%;
+		transition: width .3s,
+					height .3s;
+
+		// centering in the unknown ;)
+		position: absolute;
+		top: 0;right: 0;bottom: 0;left: 0;
+		margin: auto;
+
+		max-width: 95%;
+		max-height: 95%;
+
+		border-radius: 5px;
+		border: 5px solid #fff;
+		padding: 20px 5px 120px;
+
+		.modal-thumbnails{
+			margin-top: 0;
+			position: absolute;
+			width: 95%;
+			height: 100px;
+			bottom: 0px;
+			left: 0;
+			right: 0;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		.btn-modal-control{
+			opacity: 0;
+			&.btn-closebtn{ opacity: 1;}
+		}
+	}
+
+	.big-image:hover ~ .btn-modal-control, .btn-modal-control:hover{ opacity: 1;}
+	
+	text-align: center;
+	img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	@media only screen and (max-width: 767px){
+		.modal-content{
+			max-height: 100%;
+			max-width: 100%;
+			border-radius: 0px;
+			border: none;
+			padding: 0;
+			.btn-modal-control.btn-closebtn{ opacity: 0;}
+			&:hover{
+				.btn-modal-control{
+					opacity: 0;
+				}
+			}
+			&.hovered{
+				.btn-modal-control{ opacity: 1;}
+			}
+			.modal-thumbnails{
+				display: none;
+			}
+		}
+	}
+}
+
+.modal-form{
+	text-align: center;
+	.modal-dialog{
+		display: inline-block;
+		background: #fff;
+		width: auto;
+		height: auto;
+		padding: 30px 50px 40px;
+
+		@media (max-width: 767px){
+			padding: 50px 20px 30px;
+			margin: 0;
+		}
+	}
+	.btn-closebtn{
+		position: absolute;
+		top: 10px;
+		right: 10px;
+	}
+}
+
+.popup-on-buy{
+	padding: 5px;
+	height: 25px;
+	display: none;
+	position: absolute;
+	border: 1px solid;
+	border-radius: 4px;
+	bottom: -7px;
+	font-size: 12px;
+	&:before, &:after{
+		content: '';
+		position: absolute;
+		bottom: 100%;
+		left: 0;
+		right: 0;
+		width: 0;
+		margin: auto;
+		border: 5px solid transparent;
+	}
+	&:after{
+		margin-bottom: -1px;
+	}
+}
+
+.added2basket{
+	font-family: 'Roboto';
+	display: none;
+	position: absolute;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: normal;
+	z-index: -1;
+	overflow: hidden;
+	padding: 10px;
+	
+	.btn-buy &, .btn-buy2 &{
+		display: block;
+	}
+	.btn-buy2 &{
+		transition: transform .3s;
+		bottom: 100%;
+		left: 50%;
+		width: 100px;
+
+		transform: translate(-50%, 45px) scale(0) rotate(90deg);
+		// transform-origin: 100% 100%;
+
+		&.shown{
+			z-index: 1000;
+			transform: translate(-50%, 0px) scale(1) rotate(0);
+		}
+	}
+
+	.btn-buy.medium &{
+		text-transform: none;
+		padding: 5px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+		transition: bottom .4s;
+				
+		&.shown{
+			bottom: -28px;
+		}
+	}
+
+	.btn-buy.large &{
+		font-family: Arial, Helvetica, sans-serif;
+		text-transform: none;
+		padding: 3px;
+		left: 0;
+		right: 0;
+		top: 0;
+		text-align: center;
+		transition: top .4s;
+		font-size: 12px;
+		&.shown{
+			top: 95%;
+		}
+	}
+}
+
+#modal_sizes-info{
+	.modal-content{
+		margin: 0 auto;
+		width: 75%;
+		max-height: 90%;
+		text-align: center;
+
+		@media(max-width: 479px) {width: 96%;height: auto;}
+
+		table {margin: 30px auto;width: 80%;}
+		thead{font-weight: bold;}
+		h2{
+			margin-top: 20px;
+		}
+	}
+}
+
+#ajax-search-popup{
+	transition: transform .4s;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	text-align: left;
+	
+	width: 100%;
+	max-width: 640px;
+	max-height: 400px;
+	
+	overflow: auto;
+
+	transform: scaleY(0);
+	transform-origin: center 0;
+	&.shown{
+		transform: scaleY(1);
+	}
+	&.mobile{
+		left: 0;
+		max-height: none;
+	}
+}
+
+.ajax-search-item{
+	position: relative;
+	height: 100px;
+	transition: background .4s ease;
+	& + &{
+		border-top: 1px solid;
+	}
+	.ajax-search-item-name{
+		font-weight: bold;
+		transition: border-color .4s ease;
+		&, &:link, &:visited, &:focus, &:hover, &:active{
+			text-decoration: none;
+			outline: none;
+			border-bottom: 1px solid;
+		}
+		&:active{
+			transition: none;
+		}
+	}
+	.img-container{
+		display: inline-block;
+		vertical-align: top;
+		position: relative;
+		height: 100%;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		width: 80px;
+		text-align: center;
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	.main-data{
+		display: inline-block;
+		width: 180px;
+		vertical-align: top;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+
+	.buy-actions{
+		position: absolute;
+		top: 15px;
+		right: 10px;
+		height: 50px;
+	}
+
+	.price{
+		position: absolute;
+		right: 10px;
+		top: 70px;
+		font-size: 16px;
+		font-weight: bold;
+	}
+}

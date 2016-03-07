@@ -1,0 +1,930 @@
+/*------------------------------------------------------------------
+Forms & inputs - Forms
+
+1. Textarea / .textarea-styled
+2. Profile settings form / .form_account-settings
+3. Subscribe form of user / .form_account-subscribe-settings
+4. Reg&login forms / .form_login, .form_registration
+5. Ligin form / .form_login
+6. Registration form / .form_registration
+7. Captcha / .captcha
+8. Order form / .form-order
+9. Search form / #form-search
+10. Post feedback / .form_post-feedback
+
+-------------------------------------------------------------------*/
+
+.textarea-styled{
+	transition: .4s;
+	width: 100%;
+	resize: none;
+	height: 162px;
+	border: 1px solid;
+	padding: 15px;
+	margin-bottom: 15px;
+	margin-top: 15px;
+	&:focus{ outline: none;}
+}
+
+.form_account-settings{
+	padding-left: 200px;
+	width: 480px;
+	.input-wrapper{
+		display: block;
+		position: relative;
+		margin-bottom: 15px;
+		.text, &>label{
+			position: absolute;
+			top: 0;
+			left: -200px;
+			
+			width: 200px;
+			height: 33px; // same as input height
+			line-height: 33px;
+			// ^ width and height are set for user to be able to click
+			// anywhere between text and input to focus on that input
+			&:hover{ cursor: pointer;}
+			// ^ and making pointer for user to see that he/she CAN
+			// click there to get some result
+
+			font-size: 14px;
+			font-weight: normal;
+		}
+
+		&.social-wrap label:hover{ cursor: default;}
+	}
+
+	.textinput{
+		height: 33px;
+		width: 280px;
+		text-align: left;
+		border-radius: 2px;
+		font-weight: normal;
+		font-size: 12px;
+		
+		&.short{ // input with a button on the right
+			vertical-align: middle;
+			width: 245px;
+			&+.btn-plus{
+				vertical-align: middle;
+				width: 29px;
+				height: 29px;
+				font-size: 26px;
+				line-height: 29px;
+				text-align: center;
+			}
+		}/* &.short */
+	}/* .textinput */
+
+	// webshims styling
+	.date-input-buttons{
+		height: 31px;
+		.step-controls{
+			margin-top: 7px;
+		}
+		.ws-popover-opener{
+			background: none;
+			font-size: 16px;
+			height: 31px;
+			line-height: 31px;
+		}
+	}
+
+	// ul reset
+	ul{
+		position: relative;
+		list-style: none;
+		margin: 0;
+		padding: 0px;
+	}
+
+	.settings-list{
+		&>label{
+			padding-top: 5px;
+			height: 100%;
+			line-height: normal;
+		}
+		ul{ 
+			padding-bottom: 5px;
+			border-bottom: 1px solid;
+			margin-bottom: 8px;
+		}
+		li{
+			position: relative;
+			display: list-item;
+			padding: 5px 0px 5px 20px;
+			vertical-align: middle;
+			font-size: 12px;
+			font-weight: normal;
+			&:before{
+				font-family: Flaticon;
+				position: absolute;
+				left: 4px;
+
+				font-size: 16px;
+				font-weight: normal;
+			}
+			
+			&.phone{
+				&:before{
+					content: "\e02d";
+					font-size: 20px;
+					top: -1px;
+				}
+			}
+
+			&.address:before{
+				content: "\e01b";
+				font-size: 18px;
+				left: 1px;
+				top: 0px;
+			}
+		}
+
+	}
+	
+	.item-actions{
+		float: right;
+		font-size: 12px;
+		.btn-text{
+			text-decoration: none;
+			transition: 0.3s;
+			border-bottom: 1px dotted;
+		}
+		button{
+			position: relative;
+			background: none;
+			padding-left: 20px;
+		}
+
+		.action-delete{
+
+			&:before{
+				font-family: "Flaticon";
+				position: absolute;
+				font-weight: bold;
+				left: 0;
+				top: -5px;
+				content: "\e023";
+				font-size: 20px;
+			}
+		}
+	}/* .item-actions */
+
+	.social-list{
+		li{ 
+			margin-top: 5px;
+			&:first-child{ margin-top: 0;}
+		}				
+		.social{
+			&:before{
+				content: '';
+				display: inline-block;
+				height: 100%;
+				vertical-align: middle;
+			}
+			background-image: none;
+			display: inline-block;
+			vertical-align: middle;
+			
+			text-align: center;
+			.icon-container{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+		.item-actions{ 
+			float: none;
+			display: inline-block;
+		}
+
+		&.all-socials{
+			li{ 
+				display: inline-block;
+				margin: 0;
+			}	
+		}
+	}/* .social-list */
+	.social{
+		width: 33px;
+		height: 33px;
+		display: inline-block;
+		border-radius: 4px;
+	}/* .social */
+	
+	
+	.avatar{
+		.img-container{
+			float: left;
+			border: 1px solid;
+			width: 93px;
+			height: 93px;
+			text-align: center;
+			line-height: 93px;
+			img{
+				max-width: 100%;
+				max-height: 100%;
+			}	
+		}
+
+		.fileinput-styled{
+			position: relative;
+			width: 180px;
+			float: right;
+			margin-top: 1px;
+			margin-right: 1px;
+			.btn-fileinput{
+				@extend %btn-std;
+				display: block;
+				width: 100%;
+				height: 41px;
+				text-align: center;
+				line-height: 41px;
+				font-size: 16px;
+				font-weight: bold;
+				margin-bottom: -10px;
+				cursor: pointer;
+			}
+			input{
+				/* Warning! There may be problems with files downloading when you hide input by display: none,
+				so you need hide input by transparency or positioning
+				display: none; */
+				position: absolute;
+				visibility: hidden;
+				opacity: 0;
+				top: 0;
+				left: 0;
+				height: 0;
+			}
+		}/* .fileinput-styled */
+	}/* .avatar */
+
+
+	@media (max-width: 767px){
+		margin: 0 auto;
+		width: 290px;
+		padding-left: 0;
+		padding-right: 0;
+
+		.input-wrapper{
+			padding-top: 33px;
+			// ^ for label
+
+			.text, &>label{
+				position: absolute;
+				left: 0px;
+				
+				width: 100%;
+			}
+		}
+
+		.textinput{
+			height: 45px;
+			width: 100%;
+			
+			font-size: 16px;
+			
+			&.short{ // input with a button on the right
+				width: 240px;
+				&+.btn-plus{
+					width: 43px;
+					height: 43px;
+					line-height: 43px;
+				}
+			}/* &.short */
+		}/* .textinput */
+
+		// webshims styling
+		.date-input-buttons{
+			height: 45px;
+			.step-controls{
+				margin-top: 14px;
+			}
+			.ws-popover-opener{
+				height: 45px;
+				line-height: 45px;
+			}
+		}
+
+		.settings-list{
+			margin-top: 30px;
+			&>label{
+			}
+			li{
+				padding: 15px 0px 15px 30px;
+				font-size: 14px;
+				&:before{
+					left: 4px;
+					font-size: 16px;
+				}
+				
+				&.phone{
+					&:before{
+						font-size: 30px;
+						top: 2px;
+					}
+				}
+
+				&.address:before{
+					font-size: 28px;
+					top: 5px;
+				}
+			}
+
+		}
+		
+
+		.social-list{
+			li{ 
+				padding-top: 5px;
+				padding-bottom: 5px;
+			}				
+
+			&.all-socials{
+				li{ 
+					margin-right: 10px;
+				}	
+			}
+		}/* .social-list */
+		
+
+		.avatar{
+			.fileinput-styled{
+				position: relative;
+				width: 170px;
+				float: right;
+				margin-top: 1px;
+				margin-right: 1px;
+				input{
+					/* Warning! There may be problems with files downloading when you hide input by display: none,
+				so you need hide input by transparency or positioning
+					display: none; */
+					position: absolute;
+					visibility: hidden;
+					opacity: 0;
+					top: 0;
+					left: 0;
+					height: 0;
+					width: 0;
+					
+				}
+			}/* .fileinput-styled */
+		}/* .avatar */
+		
+	}/* @media (max-width: 767px) */
+}/* .form_account-settings */
+
+.form_account-subscribe-settings{
+	width: 100%;
+	max-width: 315px;
+	padding-left: 90px;
+	
+	.input-wrapper{
+		display: block;
+		position: relative;
+		margin-bottom: 15px;
+
+		.textinput{
+			height: 31px;
+		}
+
+		.label-text{
+			position: absolute;
+			top: 0;
+			left: -90px;
+
+			width: 90px;
+			height: 31px; // same as input height
+			line-height: 31px;
+			// ^ width and height are set for user to be able to click
+			// anywhere between text and input to focus on that input
+			&:hover{ cursor: pointer;}
+			// ^ and making pointer for user to see that he/she CAN
+			// click there to get some result
+			font-size: 14px;
+			font-weight: normal;
+		}
+	}/* .input-wrapper */
+
+	.btn-submit{
+		@extend %btn-std;
+		&:before{
+			border-radius: 4px;
+		}
+
+		margin-top: 15px;
+		border-radius: 4px;
+		display: block;
+		width: 100%;
+		height: 43px;
+		
+		.btn-text{
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}/* .btn-submit */
+
+	@media (max-width: 767px){
+		padding-left: 0;
+		
+		.input-wrapper{
+			padding-top: 31px;
+			.textinput{
+				height: 45px;
+			}
+
+			.label-text{
+				left: 0px;
+				width: 100%;
+			}
+		}/* .input-wrapper */
+	}
+}/* .form_account-subscribe-settings */
+
+.form_login, .form_registration{
+	margin: 0 auto;
+	text-align: right;
+	h2{
+		display: block;
+		font-weight:bold;
+		text-transform: uppercase;
+		margin: 0 !important;
+		position: relative;
+
+		text-align: left;
+		font-size: 18px;
+
+		.header-text{
+			position: relative;
+			&:before{
+				font-family: "Flaticon";
+				position: absolute;
+				content: "\e033";
+				top: -5px;
+				left: -50px;
+				padding-left: 1px;
+				// text-align center keeps this icon slightly to the left
+				// we need to move it to the right by 1-2 pixels
+
+				border-radius: 50%;
+				width: 42px;
+				height: 42px;
+				line-height: 40px;
+				
+				text-align: center;
+				font-weight: bold;
+				font-size: 22px;
+			}/* &:before */
+		}/* .header-text */
+	}/* h2 */
+	
+	.switch-form-block{
+		margin-bottom: 15px;
+		text-align: left;
+		font-size: 14px;
+
+		.btn-form-switch{
+			outline: none;
+			.btn-text{
+				border-bottom: 1px solid;
+			}
+		}/* .btn-form-switch */
+	}/* .switch-form-block */
+
+	.textinput-wrapper{
+		position: relative;
+		width: 100%;
+		margin-bottom: 20px;
+		font-weight: normal;
+		
+		input{
+			height: 31px;
+
+			&+.btn-input{
+				height: 31px;
+			}
+		}
+		.label-text{
+			position: absolute;
+			left: 0;
+			top: 0;
+
+			height: 31px;
+			line-height: 31px;
+			font-weight: normal;
+			text-align: left;
+
+			&:hover{ cursor: pointer;}
+		}/* .label-text */
+	}/* .textinput-wrapper */
+
+	.order-step1-page &{
+		h2{
+			margin: 60px 0 30px !important;
+			.header-text{
+				&:before{
+					top: -7px;
+				}/* &:before */
+			}/* .header-text */
+		}/* h2 */
+		
+		.switch-form-block{
+			display: none;
+		}/* .switch-form-block */
+	}
+
+	@media (max-width: 767px){
+		.modal &{
+			width: 280px !important;
+		}
+		.textinput-wrapper{
+			padding-left: 0 !important;
+			padding-top: 31px;
+			
+			input{
+				height: 45px;
+				line-height: 45px;
+				font-size: 16px;
+				&+.btn-input{
+					height: 45px;
+				}
+			}
+			.label-text{
+				width: 100% !important;
+
+				.inner-text{
+					display: block;
+					line-height: 31px;
+				}
+			}/* .label-text */
+		}/* .textinput-wrapper */
+
+		.anti-robot{
+			margin-top: 0 !important;
+			.captcha{
+				// top: 31px !important;
+				height: 45px !important;
+				line-height: 45px !important;
+				
+				position: relative !important;
+				display: block;
+				margin: 15px auto;
+			}
+			.label-text{
+				top: 0 !important;
+			}
+			input{
+				width: 100%;
+			}
+		}/* .anti-robot */
+	}/* @media (max-width: 767px) */
+
+
+}/* .form_login, .form_registration */
+
+.form_login{
+	width: 100%;
+	.modal &{ width: 400px;}	
+	h2{ padding-left: 45px;}
+	
+	.switch-form-block{ padding-left: 45px;}
+
+	.textinput-wrapper{
+		padding-left: 100px;
+		.label-text{ width: 75px;}
+	}
+
+	.btn-submit{
+		width: 225px;
+		display: inline-block;
+		margin-right: 1px;
+	}
+
+	.forgot-pass{
+		@extend %reset-link;
+		transition: 0.3s;
+		border-bottom: 1px solid;
+	}
+
+	.social-text{
+		margin-top: 15px;
+		font-size: 12px;
+		margin-bottom: 5px;
+	}
+
+	.social-list{
+		padding: 0px;
+		margin: 0;
+		li{ 
+			display: inline-block;
+			@media (max-width: 767px){
+				margin-left: 10px;
+			}
+		}
+		.social{
+			width: 32px;
+			height: 32px;
+			line-height: 30px;
+			display: inline-block;
+			border-radius: 4px;
+	
+			text-align: center;
+			.icon-container{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}/* .social */
+	}/* .social-list */
+}/* .form-login */
+
+.form_registration{
+	width: 100%;
+	font-size: 16px;
+	.modal &{ width: 500px;}
+	h2{ 
+		padding-left: 45px;
+	}
+	.switch-form-block{ padding-left: 45px;}
+	
+	.radio-group{
+		text-align: left;
+		margin-top: 20px;
+		margin-bottom: 10px;
+		.radio-styled{
+			margin-bottom: 20px;
+		}
+	}
+
+	.textinput-wrapper{
+		padding-left: 100px;
+		.label-text{ width: 110px;}
+	}
+
+	.inner-text{
+		display: table-cell;
+		line-height: 1.1;
+		vertical-align: middle;
+		padding-right: 10px;
+	}
+
+	.anti-robot{
+		margin-top: 20px;
+		position: relative;
+		.label-text{
+			top: -31px;
+			width: 100%;
+		}
+		.textinput-wrapper{
+			padding-left: 157px;
+		}
+		.captcha{
+			position: absolute;
+			top: 0;
+			left: 0px;
+			height: 31px;
+			width: 135px;
+		}
+	}/* .anti-robot */
+	
+	.required-info{
+		text-align: left;
+		font-size: 12px;
+	}
+	.checkbox-styled{
+		margin-top: 20px;
+		margin-bottom: 30px;
+	}
+	.checkbox-content{
+		font-size: 12px;
+		a{
+			transition: .3s;
+			@extend %reset-link;
+			border-bottom: 1px solid;
+		}
+	}
+
+	.btn-submit{
+		width: 230px;
+		display: block;
+		margin: 0 auto;
+	}
+}/* .form-registration */
+
+.captcha{
+	overflow: hidden;
+	border: 1px solid;
+	text-align: center;
+
+	img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+.form-order{
+	h3{
+		font-size: 18px;
+		padding-bottom: 10px;
+		margin-top: 50px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid;
+	}
+	
+	.radio-styled{
+		margin-right: 20px;
+		margin-bottom: 15px;
+	}
+	input[name="payer-type"]+label{
+		margin-right: 30px;
+		font-weight: bold;
+	}
+
+	label{
+		font-size: 14px;
+		font-weight: normal;
+	}
+	.delivery-info{
+		.text{
+			display: inline-block;
+			margin-bottom: 5px;
+		}
+		@media (max-width: 991px){
+			.jq-selectbox{
+				margin-top: 0;
+			}
+		}
+	}/* .selector */
+	
+	.buyer-info-toggle{
+		display: inline-block;
+		vertical-align: bottom;
+		margin-left: 10px;
+		width: 20px;
+		height: 20px;
+		font-size: 16px;
+	}
+	.buyer-info{ 
+		.textinput{
+			width: auto;
+		}
+	}
+
+	.delivery-type, .payment-system-type{
+		.radio-item{
+			display: block;
+			transition: .4s;
+			padding: 15px;
+			border: 1px solid;
+			&-header{
+				display: block;
+				font-size: 14px;
+				font-weight: bold;
+				margin-top: 15px;
+				margin-bottom: 10px;
+			}
+			&-description{
+				display: block;
+				margin: 0;
+				font-size: 12px;
+				font-weight: normal;
+			}
+			&:hover{ cursor: pointer;}
+			label{ cursor: pointer;}
+		}		
+	}
+
+	.payment-system-type{
+		.radio-item-header{
+			text-align: center;
+
+			@media (max-width: 767px){
+				font-size: 12px;
+			}
+		}
+
+	}
+
+	input[type="radio"], input[type="checkbox"]{
+		display: none;
+	}
+	.radio-img{
+		display: block;
+		@extend %btn-std;
+		&:active{ padding-top: 0;}
+		width: 100%;
+		height: 109px;
+		line-height: 109px;
+		text-align: center;
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+
+	}
+
+	.basket{
+		border-top: 1px solid;
+		margin-top: -20px;
+	}
+
+	.total-price, .total-weight{
+		font-size: 16px;
+		span{ font-size: 18px;}
+	}
+
+	.total-weight{margin-right: 30%;}
+
+	.make-order{
+		@extend %reset-link;
+		@extend %btn-std;
+		display: block;
+		width: 261px;
+		height: 47px;
+		line-height: 43px;
+		font-size: 16px;
+		font-weight: bold;
+		margin-top: 15px;
+		margin-bottom: 30px;
+		padding: 0;
+		float: right;
+		border-radius: 4px;
+		&:active{
+			padding: 0 !important;
+		}
+		&:before{
+			border-radius: 4px;
+		}
+		text-decoration: none;	
+	}
+}/* .form-order */
+
+#form-search{
+	input{
+		padding-right: 30px;
+	}
+
+	@media (max-width: 767px){
+		display: none;
+	}
+}
+
+.btn-post-feedback, .btn-cancel-feedback{
+	display: none;
+}
+.form_post-feedback{
+	&.authorized{
+		.feedback-content{ margin-left: 120px;}
+		.non-authorized-info{ display: none;}
+		.user-info{ display: block;}
+	}
+	.feedback-content{ margin-left: 0; }
+	.non-authorized-info{ display: inline-block;}
+	.user-info{ display: none;}
+	margin-bottom: 40px;
+
+	.inputs{ text-align: right;}
+	.textinput{ width: auto;}
+	.input-wrapper{ 
+		display: inline-block;
+		width: auto;
+		margin-left: 15px;
+		margin-top: 10px;
+	}
+	
+	.btn-submit{
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 0;
+		padding: 0px 30px;
+		height: 34px;
+
+		font-size: 16px;
+		font-weight: bold;
+		width: auto;
+		
+		@media (max-width: 767px){
+			height: 42px;
+		}
+	}
+
+	.captcha{
+		display: inline-block;
+		vertical-align: middle;
+		height: 36px;
+		line-height: 36px;
+		width: 150px;
+
+		@media (max-width: 767px){
+			height: 44px;
+			line-height: 44px;
+			width: 180px;
+		}
+	}
+
+	.captcha-wrap{
+		.textinput{ width: 150px;}
+		@media (max-width: 767px){
+			.textinput{ width: 180px;}
+		}
+	}
+}/* .form_post-review */

@@ -1,0 +1,177 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / %top-line-btn-theme
+2.  / %second-line-btn-theme
+3.  / .top-line
+4.  / .header-links
+5.  / .city-link
+6.  / .phone
+7.  / .email
+8.  / .slogan
+9.  / .basket-popup
+10.  / .basket-footer
+11.  / #form-search-mobile
+
+-------------------------------------------------------------------*/
+
+%top-line-btn-theme{
+	// background: transparent;
+	transition: all 0.3s ease;
+	color: white;
+	&:before{
+		color: #fff;
+		transition: all 0.3s ease;
+	}
+
+
+	>.btn-text, .quan{
+		transition: all 0.3s ease;
+		color: #fff;
+		border-bottom-color: fade-out(#fff, 0.7);
+	}
+	&:hover{
+		&:before{
+			color: white;
+		}
+		>.btn-text, .quan{
+			//color: $color-main-hover-light;
+			border-bottom-color: transparent;
+		}	
+	}
+	
+	&:after{
+		background: fade-out(#000, 0.5);
+	}
+}
+
+%second-line-btn-theme{
+	transition: .4s;
+	background: black;
+	color: #fff;
+	&.active{color: $color-main-light};
+	&:before{ color: #fff;}
+	&:hover{
+		background: $color-main-dark;
+		&:before{ color: #fff;}
+	}
+	&.active:hover{background: black;}
+}
+
+.top-line{
+	.top-line-text{ color: #fff;}
+	background: fade-out($color-main-dark, 0.25);
+	&.affix{
+		background: $color-main-dark;
+	}
+	.header-logo-wrap{
+		@media (max-width: 767px){
+			background: fade-out($color-main-dark, 0.25);
+		}
+	}
+	
+	.header-btn{ @extend %top-line-btn-theme;}
+	.btn-account{
+		.btn-text{
+			border-bottom-color: fade-out(#fff, 0.5);
+		}
+	}
+	// .btn-favorites, .btn-compare{ background: #333333;}
+
+	
+	.mobile-menu {
+		background: none;
+		a{
+			background:$color-main-dark;
+			transition: background .4s;
+			color: #fff;
+			&:hover{
+				background: lighten($color-main-dark, 5%);
+			}
+		}
+	}
+
+	.quan {
+		color: white !important;
+		background: red;
+	}
+}
+.header-links>a{
+	@extend %second-line-btn-theme;
+}
+.city-link>a{	&.btn-city-select{
+		transition: background .4s,
+					color .4s;
+		color: #fff;
+		&:before{ color: #fff;}
+		.btn-text{
+			background: none;
+			border-bottom-color: fade-out(#fff, 0.5);
+			&:after{
+				border-color: #fff transparent transparent transparent;
+			}
+		}
+		&:hover{
+			.btn-text{ border-bottom-color: transparent;}
+		}
+		
+	}
+	
+}
+
+.phone{
+	&, &:hover, &:active{
+		color: #333;
+	}
+}
+
+.email{
+	.text{
+		transition: 0.3s ease;
+		border-bottom-color: fade-out(#333,0.6);
+	}
+	&, &:hover, &:active{
+		color: #333;
+		&:before{ color: #333;}
+	}
+	&:hover, &:active{
+		.text{
+			border-bottom-color: transparent;
+		}
+		
+	}
+}
+
+.slogan{
+	color: #fff;
+}
+
+.basket-popup{
+	.basket-items-number,
+	.price-usd{
+		color: #000;
+	}
+}
+
+.basket-footer{
+	&:before{
+		background-color: #beb9c3;
+	}
+	color: #73687b;
+
+	.save-money{
+		transition: border-color 0.3s ease;
+		color: #1666d3;
+		border-bottom-color: fade-out(#1666d3, 0.5);
+		&:hover, &:active{
+			color: #1666d3;
+			border-bottom-color: transparent;
+		}
+	}
+}
+
+#form-search-mobile{
+	background: #2b2b2b;
+	color: #000;
+}

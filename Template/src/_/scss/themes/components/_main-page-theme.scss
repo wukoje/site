@@ -1,0 +1,117 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / #big-banner
+2.  / .aside-promo
+3.  / .catalog-start
+4.  / .news
+5.  / .news-item
+6.  / .main-page-catalog
+7.  / .banner-bottom
+8.  / .template-page
+
+-------------------------------------------------------------------*/
+
+#big-banner{
+	.carousel-control{&.left,&.right{background: none !important;}}
+}
+
+.aside-promo{
+	&:hover img {
+		box-shadow: 0 0 0 2px $color-main;
+	}
+}
+
+.catalog-start{
+	.header>h3{
+		&:before{ background: $divider-line;}
+		.text{ color: #bbb1c1;}
+	}
+	.img-container{
+		background: $gradient-main;
+		.icon_catalog-big-choice,.icon_catalog-great-quality,.icon_catalog-can-try {height: 120px;}
+		.icon_catalog-big-choice {background: url(../../img/icons/icon_catalog-big-choice.png) no-repeat 50% 50%;}
+		.icon_catalog-great-quality {background: url(../../img/icons/icon_catalog-great-quality.png) no-repeat 50% 50%;}
+		.icon_catalog-can-try {background: url(../../img/icons/icon_catalog-can-try.png) no-repeat 50% 50%;}
+
+		&:after{ background: $gradient-border;}
+		
+		&:before{
+			background: $gradient-silver;
+			border-color: #cecae8;
+			box-shadow: 0px 1px 4px fade-out($color-silver-shadow, 0.72);
+		}
+	}
+	.text{ color: #141414;}
+}/* .catalog-start */
+
+.news{
+	h2{
+		&:before{ color: $divider-line;}
+		&:after{ background: #c3ff50;}
+	}
+}/* .news */
+
+.news-item{
+	.news-link>.text, .news-text>.text{
+		color: #2ba5f3;
+		border-color: fade-out(#2ba5f3, 0.5);
+
+		.news-page &{
+			&:hover{
+				border-color: transparent;
+			}
+		}
+	}
+
+	.news-date{
+		color: #888;
+		&:before{ color: $color-main;}
+	}
+
+	.news &{
+		&:hover, &:active{
+			.news-text>.text{ border-color: transparent;}
+		}
+	}
+}/* .news-item */
+
+.main-page-catalog{
+	h2{
+		color: #867790;
+
+		&:after, &:before{
+			border-color: transparent;
+		}
+		&:before{ border-bottom-color: $color-main-dark;}
+		&:after{ border-top-color: $color-main-dark;}
+		strong{
+			border-top-color: $divider-line;
+			background-color: #f3f5f4;
+		}
+		
+	}
+}
+
+.banner-bottom{
+	h2{
+		color: #1d1d1d;
+		a{
+			color: #2199ff;
+			border-color: fade-out(#2199ff, 0.5);
+			&:hover{ border-color: transparent;}
+		}
+	}
+
+	.all-brands{
+		color: #2199ff;
+		border-color: fade-out(#2199ff, 0.5);
+		&:hover{ border-color: transparent;}
+	}
+}
+
+.template-page{
+	h3{ color: #000;}
+	p{ color: #4c4c4c;}
+}

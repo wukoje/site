@@ -1,0 +1,33 @@
+$color-main-light: #ffb5ee;
+$color-main-dark: #58baff;
+$color-main-text: #113880;
+$color-main-text-shadow: #8ff2ff;
+$color-main-hover-light: #ffd7f6;
+$color-main-hover-dark: #8fd1ff;
+$color-main-click-light: #ffb5ee;
+$color-main-click-dark: #58baff;
+$gradient-main: linear-gradient($color-main-light, $color-main-dark);
+$gradient-main-hover: linear-gradient($color-main-hover-light, $color-main-hover-dark);
+$gradient-main-click: linear-gradient($color-main-click-dark, $color-main-click-light);
+
+$color-border-light: #ff8ebe;
+$color-border-dark: #1e65db;
+$gradient-border: linear-gradient($color-border-light, $color-border-dark);
+
+$color-border-hover-light: #ffb4d4;
+$color-border-hover-dark: #3380ff;
+$gradient-border-hover: linear-gradient($color-border-hover-light, $color-border-hover-dark);
+
+$color-border-click-light: #d76ea7;
+$color-border-click-dark: #2044a9;
+$gradient-border-click: linear-gradient($color-border-click-dark, $color-border-click-light);
+
+$gradient-input-border: linear-gradient(to right, $color-main-dark, $color-main-light);
+
+$gradient-scrollbar-click: linear-gradient(to bottom, #ffb5ee, #58baff);
+
+$select-text: #55a3e5;
+
+$catalog-menu-item-lvl1: #3f90ed;
+
+$gradient-header-bg: url('../../img/patterns/gradient-header-bg-babyboom.png');

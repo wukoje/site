@@ -1,0 +1,77 @@
+/*------------------------------------------------------------------
+Pages styling - Brands page
+-------------------------------------------------------------------*/
+
+// Styles for the page with brands
+
+.brands-page{
+	h2{
+		font-size: 24px;
+	}
+
+	.btn-alphabet{
+		margin-top: 5px;
+	}
+	.brands-all{
+		list-style: none;
+		padding: 0;
+		text-align: justify;
+
+		li{
+			width: 25%;
+			display: inline-block;
+			vertical-align: top;
+			margin-bottom: 30px;
+
+			text-align: center;
+			
+			
+			img{
+				max-width: 100%;
+				margin-bottom: 5px;
+				transform: scale(1);
+				transition: .4s;
+			}
+
+
+		}/* li */
+
+		a{
+			@extend %reset-link;
+			font-weight: bold;
+			padding-top: 10px;
+			font-size: 16px;
+
+			position: relative;
+			display: block;
+			
+			.text{
+				transition: .4s;
+				border-bottom: 1px solid;
+			}
+
+			&:hover{ cursor: pointer; 
+				img{transform: scale(1.1);}
+			}
+		}/* a */
+	}/* .brands-all */
+
+	@media (max-width: 991px){
+		.brands-all{
+			li{
+				width: 33.3%;
+			}
+		}
+	}
+
+	@media (max-width: 767px){
+		.brands-all{
+			li{
+				width: 50%;
+			}
+			a{
+				font-size: 14px;
+			}
+		}
+	}
+}/* .brands-page */

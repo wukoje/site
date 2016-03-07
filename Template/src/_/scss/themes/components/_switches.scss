@@ -1,0 +1,22 @@
+.v-type-switch-wrap{
+	.text{
+		color: #434343;
+	}
+}
+
+.view-type-switcher{
+	
+	button{
+		@extend %gradiented;
+		&:before{
+			background: none !important;
+			box-shadow: none !important;
+			color: $color-main-text;
+		}
+		text-shadow: 0px 1px $color-main-text-shadow;
+	}
+
+	.box{
+		color: $color-main-dark;
+	}
+}

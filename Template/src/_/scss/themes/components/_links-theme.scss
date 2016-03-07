@@ -1,0 +1,22 @@
+.breadcrumbs{
+	li{
+		a, span{
+			color: #39353b;
+			text-decoration: none;
+			border-bottom-color: fade-out(#39353b, 0.6);
+			transition: border-color 0.3s;
+
+			&:hover{
+				color: #313131;
+				border-bottom-color: transparent;
+			}
+		}
+
+		&:last-child, &.active{
+			.bcrumb{
+				color: #9e93a5;
+				border-bottom-color: transparent;
+			}
+		}
+	}/* li */
+}/* .breadcrumbs */

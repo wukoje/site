@@ -1,0 +1,142 @@
+/*------------------------------------------------------------------
+Page partials - Footer
+
+1. Top indent of footer / .header-content ~ .container
+2. FOOTER / .page-footer
+3. Styles of list / .footer-catalog, .footer-service
+4. Service menu / .footer-service-menu
+5. Contacts menu / .footer-contacts-menu
+6. Footer of footer / .footer-of-footer
+
+-------------------------------------------------------------------*/
+
+
+.header-content ~ .container{
+	min-height: 500px;
+}
+
+.page-footer{
+	font-size: 15px;
+	margin-top: 50px;
+	background: url('../img/patterns/concrete_wall.png');
+	h2{
+		font-weight:bold;
+		text-transform: uppercase;
+		letter-spacing: $uppercase-letter-spacing;
+		font-size: 18px;
+		margin-bottom: 25px;
+		margin-top: 35px;
+	}
+
+	ul{
+		list-style: none;
+	}
+	a, a>.text{ transition: border-color 0.3s ease;}
+
+	@media (max-width: 767px){
+		h2{
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
+}
+
+.footer-catalog, .footer-service{
+	li{ margin-bottom: 10px;}
+	a{ border-bottom: 1px solid;}
+	&-menu{ margin-bottom: 25px;}
+}
+
+.footer-service-menu{ padding: 0;}
+.footer-contacts-menu{
+	margin-top: -3px; // to align it with service menu
+	// (it moved down a little because of vertical-align: middle on icons)
+	margin-bottom: 20px;
+	padding: 0;
+	li{
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+	hr{
+		width: 75%;
+		margin-left: 0;
+	}
+	a{
+		&>.text{ border-bottom: 1px solid;}
+		&:hover{
+			.icon{ opacity: 0.5;}
+		}
+	}
+	.icon{
+		transition: opacity 0.3s ease;
+		display: inline-block;
+		vertical-align: middle;
+		margin-right: 10px;
+		width: 28px;
+		height: 28px;
+		line-height: 28px;
+		text-align: center;
+
+		border-radius: 50%;
+
+		&[class*="flaticon"]{
+			color: #fff;
+			// background: rgb(240,240,240);
+
+			&:before{
+				font-size: 22px;
+			}
+		}
+		&[class*="packet"]:before{
+			font-size: 24px;
+			position: relative;
+			top: 2px;
+		}
+	}
+
+	
+	@media only screen and (max-width: 767px){
+		.footer-social-wrap{
+			display: inline-block;
+			margin-top: 0;
+		}
+		a>.social + .text{
+			display: none;
+		}
+	}
+	
+}
+
+.footer-of-footer{
+	margin-top: 20px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid;
+
+	p{
+		margin: 0;
+		line-height: 20px;		
+	}
+
+	a{
+		display: inline;
+		text-decoration: none;
+		border-bottom: 1px solid;
+	}
+
+	@media (max-width: 767px){
+		font-size: 12px;
+		margin-top: 0;
+	}
+
+	.romza-logo{
+		margin-top: 5px;
+		a{
+			border: none;
+			text-decoration: none;
+		}
+		img{
+			margin-left: 10px;
+		}
+	}
+}

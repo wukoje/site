@@ -1,0 +1,104 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / body
+2.  / %maingradient-normal-state
+3.  / %maingradient-hover-state
+4.  / %maingradient-click-state
+5.  / %maingradient-btntext
+6.  / %gradiented
+7.  / %gradientedNEW
+8.  / %silver-normal-state
+9.  / %silver-hover-state
+10.  / %silver-click-state
+11.  / %btn-silver
+12.  / .main-link, .secondary-link
+13.  / .secondary-link
+
+-------------------------------------------------------------------*/
+
+body {
+	color: #333;
+}
+
+// by using two backgrounds, one with color and second with gradient,
+// we provide nice looking fallback for browsers without gradients
+
+/* ------ placeholders for buttons with MAIN COLOR GRADIENT ------ */
+%maingradient-normal-state{
+	background: $color-main-dark;
+	background: $gradient-main;
+}
+
+%maingradient-hover-state{
+	background: $color-main-hover-light;
+	background: $gradient-main-hover;
+}
+
+%maingradient-click-state{
+	background: $color-main-click-dark;
+	background: $gradient-main-click;
+}
+
+%maingradient-btntext{
+	.btn-text, .btn-text:before{ color: $color-main-text;}
+}
+
+%gradiented{
+	@extend %maingradient-normal-state;
+	&:hover, &.hovered{ @extend %maingradient-hover-state;}
+	&:active, &.clicked{ @extend %maingradient-click-state;}
+}
+%gradientedNEW{
+	background: linear-gradient(#c4c4c4, #bbb);
+	background: $gradient-border;
+
+	&:hover, &.hovered{ 
+		background: $color-main-hover-light;
+		background: $gradient-border-hover;
+	}
+	&:active, &.clicked{ 
+		background: $color-main-click-dark;
+		background: $gradient-border-click;
+	}
+}
+/* ------ END OF placeholders for buttons with MAIN COLOR GRADIENT ------*/
+
+/* ------ placeholders for SILVER button states ------ */
+%silver-normal-state{
+	background: #f3f5f4;
+	background: $gradient-silver;
+}
+
+
+%silver-hover-state{
+	background: fade-out(#9a91a2, 0.6);
+	background: $gradient-silver-hover;
+}
+
+%silver-click-state{
+	background: fade-out(#b4b4b4, 0.6);
+	background: $gradient-silver-click;
+}
+
+%btn-silver{
+	@extend %silver-normal-state;
+	&:hover{ @extend %silver-hover-state;}
+	&:active{ @extend %silver-click-state;}
+}
+/* ------ END OF placeholders for SILVER button states ------ */
+
+.main-link, .secondary-link{
+	&, &:link, &:visited, &:hover, &:active{
+		color: #1368f5;
+	}
+}
+.secondary-link{
+	&, &:link, &:visited{
+		border-bottom-color: fade-out(#1368f5, 0.5);
+	}
+	&:hover, &:active{
+		border-bottom-color: transparent;
+	}
+}

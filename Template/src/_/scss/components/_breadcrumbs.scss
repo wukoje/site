@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------
+Navigation - Breadcrumbs
+1. Breadcrumbs / .breadcrumbs
+-------------------------------------------------------------------*/
+.breadcrumbs{
+	@extend %reset-ul;
+	line-height: 30px;
+	li{
+		text-align: center;
+		&:before{ 
+			content: "/ ";
+		}
+		&:first-child{
+
+			&:before{ display: none;}
+
+			@extend %btn-std;
+			display: inline-block;
+			position: relative;
+			top: -1px;
+			text-decoration: none;
+			width: 26px;
+			height: 26px;
+			line-height: 26px;
+			vertical-align: middle;
+			margin-right: -4px;
+
+			span{
+				transition: opacity .3s;
+				&:before{
+					font-family: "Flaticon";
+					content: "\e017";
+					// transition: font-size .3s;
+				}
+				display: block;
+				text-align: center;
+				// &:hover:before {font-size: 16px;}
+			}
+			a{
+				&:hover span{
+					opacity: 0.7;
+				}
+			}
+		}/* &:first-child */
+
+		a{ border-bottom: 1px solid;}
+
+		&:last-child, &.active{
+			@extend .disabled;
+		}
+	}/* li */
+
+	@media (max-width: 767px){
+		font-size: 12px;
+	}
+}/* .breadcrumbs */

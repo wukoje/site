@@ -1,0 +1,218 @@
+/*------------------------------------------------------------------
+General - General styles for all pages
+
+0. variables
+1. body
+2. links & buttons
+4. headings
+5. CSS diamond
+6. Alerts
+7. Various helpers
+
+-------------------------------------------------------------------*/
+
+// variables
+$uppercase-letter-spacing: 0.03em;
+
+// body
+body{
+	font-family: Roboto;
+	font-weight: 300;
+	font-size: 18px;
+
+	&.darken{
+		&:before{
+			content: '';
+			position: fixed;
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translateZ(0);
+			z-index: 200; 
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: fade-out(#000, 0.7);
+		}
+	}
+}
+
+// links & buttons
+a, button{
+	text-decoration: none !important;
+	outline: none !important;
+}
+
+button{
+	border: none;
+	outline: none;
+	padding: 0;
+}
+.main-link{
+	@extend %reset-link;
+	transition: border-color 0.4s ease;
+	
+	font-size: 14px;
+	border-bottom: 1px solid;
+}
+
+.secondary-link{
+	@extend %reset-link;
+	transition: border-color 0.4s ease;
+
+	font-size: 15px;
+	border-bottom: 1px dashed;
+}
+
+// headings
+h1, .h1, h2, .h2, h3, .h3 {
+	margin-top: 30px;
+	margin-bottom: 15px;
+}
+
+// CSS diamond for beauty
+.stone {
+	position: relative;
+	overflow: visible;
+	border-bottom: 1px solid;
+	margin: 30px 0;
+	&:before, &:after{
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 0;
+		margin: auto;
+		bottom: 0;
+		z-index: 1;
+	}
+	&:before{
+		width: 20px;
+		border: 5px solid transparent;
+	}
+	&:after{
+		border: 10px solid transparent;
+		width: 0;
+		border-bottom-width: 0;
+		border-top-width: 10px;
+		bottom: -10px;
+	}
+}
+
+// Alerts
+.alerts{
+	a{
+		display: inline-block;
+		margin-right: 60px;
+	}
+}
+#success-modal, #fail-modal {	
+	z-index: 2000;
+}
+
+// HELPERS
+.embed-responsive-2by1 {padding-bottom: 32%;}
+.embed-responsive-1by1 {padding-bottom: 32%;}
+
+.expand-content{
+	display: none;
+}
+
+.hideme{
+	opacity: 0;
+	visibility: hidden;
+}
+.cache_time_debug {  display: none;}
+
+.ajax_loader {
+	background: #fff url("img/ajax-loader.gif") center center no-repeat;
+	background-size: contain;
+}
+
+.required {
+	color: red;
+}
+
+.img-container{
+	img{
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+
+/* for SKU color img */
+div.colors-choice li {
+	margin-bottom: 16px;
+}
+div.colors-choice li img {
+	width: 23px;
+	height: 23px;
+}
+div.colors-choice li:active {
+	padding-top: 0px;
+}
+
+.ajax-search-item a.ajax-search-item-name{
+	font-weight: normal;
+}
+
+div.breadcrumbs {
+	margin: 15px 0;
+}
+
+/* for show pagination on mobile */
+div.pagination {
+	display: block;
+	text-align: center;
+}
+
+/* for coupon in big basket */
+.basket-table .coupon input.good{
+	color: #1f9f3a;
+	border-color: #1f9f3a;
+	background: #daffdd;
+}
+.basket-table .coupon input.bad{
+	color: #dc2f48;
+	border-color: #dc2f48;
+	background: #ffdbdb;
+}
+
+.form-order div.buyer-info {
+	display: block;
+}
+
+.basket-table div.discount {
+	width: 90px;
+}
+
+#form_auth_soc div.bx-auth-services div {
+	width: 144px;
+	text-align: left;
+}
+
+
+/* city switcher */
+.ys-loc-autocomplete {
+	font-weight: normal;
+	position: absolute ;
+	left: 200px;
+	display: none;
+	width: 344px;
+	max-height: 400px;
+	overflow: auto;
+	z-index: 10;
+	background: white;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-moz-border-radius: 2px;
+	box-shadow: 0 1px 2px #777;
+}
+
+.ys-loc-autocomplete div {
+	line-height: 14px;
+	padding: 3px 5px;
+	cursor: pointer;
+	font-size: 14px;
+}
+// END OF HELPERS

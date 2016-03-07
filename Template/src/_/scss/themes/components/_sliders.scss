@@ -1,0 +1,33 @@
+.price-range-slider-wrap{
+	/* Slider size and handle placement;
+	 */
+
+	/* Styling;
+	 */
+	.noUi-background {
+		background: #d1c8db;
+		box-shadow: none;
+	}
+	.noUi-connect {
+		background: $gradient-main;
+		box-shadow: none;
+	}
+	.noUi-target {
+		box-shadow: none;
+	}
+	.noUi-target.noUi-connect {
+		box-shadow: none;
+	}
+
+	/* Handles and cursors;
+	 */
+	.noUi-handle {
+		border-color: #feae38;
+		background: yellow;
+		
+		box-shadow: none;
+	}
+	.noUi-active {
+		box-shadow: none;
+	}
+}

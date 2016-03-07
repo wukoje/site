@@ -1,0 +1,421 @@
+/*------------------------------------------------------------------
+Forms & inputs - Inputs
+
+1. Input / input
+2. Text input/ .textinput
+3. Wrapper for input / .input-wrapper
+4. Button for input / .btn-input
+5. Password / .password
+6. Checkbox / .checkbox-styled
+7. Radio button / .radio-styled
+8. Panel to show this many products / .show-by
+9. Elements of panel to show this many products / .show-by-content
+10. Style of select / .jq-selectbox, .jq-select-multiple
+
+-------------------------------------------------------------------*/
+
+// inputs reset
+input{
+	border: none;
+	outline: none;
+}
+
+.textinput{
+	transition: 0.2s;
+	height: 36px;
+	width: 100%;
+
+	border: 1px solid;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	font-size: 14px;
+
+	@media only screen and (max-width: 767px){
+		height: 44px;
+	}
+}/* .textinput */
+
+.input-wrapper{ 
+	position: relative;
+	display: inline-block;
+	width: 100%;
+}
+
+// icon buttons, placed at the right side of inputs
+.btn-input{
+	@extend %reset-link;
+	position: absolute;
+	top: 0;
+	right: 0px;
+	height: 33px;
+	line-height: 33px;
+
+	text-align: left;
+	&:before{ font-family: "Flaticon";}
+
+	&.search{
+		width: 36px;
+		&:before{
+			content: "\e00e";
+			font-size: 30px;
+		}
+	}
+
+	&.password-toggle{
+		width: 55px;
+		&:before{
+			font-size: 55px;
+		}
+	}
+}/* .btn-input */
+
+.password{
+	&[type="text"]+.password-toggle:before{
+		content: "\e011";
+	}
+	&[type="password"]+.password-toggle:before{
+		content: "\e009";
+	}
+}
+
+.checkbox-styled{
+	display: inline-block;
+	vertical-align: middle;
+	
+	&:hover{
+		cursor: pointer;
+		.checkbox-content:before{
+			border-width: 2px;
+		}
+	}
+	input{ display: none;}
+	
+	.checkbox-content{
+		display: block;
+		position: relative;
+
+		padding-left: 28px;
+		padding-right: 10px;
+		
+		font-weight: normal;
+		font-size: 14px;
+		text-align: left;
+		line-height: 20px;
+		user-select: none;
+
+		
+		
+		// using :before and :after to create fake checkbox
+		// important: using them on .checkbox-content instead of label
+		// itself to be able to style checked state via sibling selector
+		// (input:checked + .checkbox-content)
+		&:before, &:after{
+			transition: 0.5s ease;
+			content: '';
+			position: absolute;
+			
+			width: 20px;
+			height: 20px;
+
+			top: 0;
+			left: 0;
+
+
+		}
+		
+		&:before{ // new checkbox, styled for the beauty!
+			border-radius: 4px;
+			border: 1px solid;
+		}
+		&:after{ // for tick
+			font-family: "Flaticon";
+			text-align: center;
+		}
+	}
+		
+	input:checked+.checkbox-content{
+		&:before{ border-width: 2px;}
+		&:after{ content: "\e000";}
+	}
+
+}/* .checkbox-styled */
+
+.radio-styled{
+	display: inline-block;
+	margin-top: 5px;
+	
+	
+	&:hover{ cursor: pointer;}
+	input{ display: none;}
+
+	.radio-content{
+		display: block;
+		position: relative;
+		
+		padding-left: 28px;
+		padding-right: 10px;
+		
+		font-weight: normal;
+		font-size: 14px;
+		user-select: none;
+
+		// using :before and :after to create fake radio-input
+		// important: using them on .radio-content instead of label
+		// itself to be able to style checked state via sibling selector
+		// (input:checked + .radio-content)
+		&:before, &:after{
+			transition: border-color 0.3s ease;
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 2px;
+			margin: auto;
+
+			border-radius: 50%;
+		}
+		&:before{ // external border with shadows
+			width: 22px;
+			height: 22px;
+
+			border: 1px solid;		
+		}
+
+		&:after{ // main (inner) circle with thick white border
+			width: 20px;
+			height: 20px;
+			top: 1px;
+			left: 1px;
+			bottom: 3px;
+
+			border: 5px solid;
+		}
+	}
+}
+
+.show-by{
+
+	input{display: none;}
+
+	.text{
+
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 10px;
+	}
+}/* .show-by */
+.show-by-content{
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+	font-weight: normal;
+	
+	min-width: 30px;
+	height: 25px;
+	text-align: center;
+	transition: .2s;
+
+	
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 0;	
+		left: 0;
+		right: 0;
+		height: 2px;
+		transition: .2s;
+		opacity: 0;
+		transform: scale(0);
+	}
+	
+	&:hover{
+		cursor: pointer;
+		&:before {transform: scale(1);opacity: .4;}
+	}
+
+	.active &{
+		pointer-events: none;
+		cursor: default;
+		font-weight: bold;
+
+		&:before {transform: scale(1);opacity: 1;}
+	}
+}
+
+
+// .jq-selectbox 
+.jq-selectbox {
+	margin-left: 5px;
+	margin-top: -2px;
+	vertical-align: middle;
+	cursor: pointer;
+	width: 135px;
+
+	@media (max-width: 991px){
+		margin-left: 0;
+		margin-top: 5px;
+	}
+
+	@media (max-width: 767px){
+		margin-top: 0;
+	}
+}
+.jq-selectbox__select {
+	height: 30px;
+	padding: 0 30px 0 10px;
+	border: 1px solid;
+}
+
+.jq-selectbox__select-text {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 13px;
+	line-height: 30px;
+}
+.jq-selectbox__trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 100%;
+	border: none;
+}
+.jq-selectbox__trigger-arrow {
+	position: absolute;
+	top: 12px;
+	right: 8px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-top: 5px solid;
+	border-right: 5px solid;
+	border-left: 5px solid;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.jq-selectbox:hover .jq-selectbox__trigger-arrow {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.jq-selectbox.disabled .jq-selectbox__trigger-arrow {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.jq-selectbox__dropdown {
+	top: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-radius: 0px;
+}
+.jq-selectbox ul {
+	margin: 5px;
+	padding: 0;
+}
+.jq-selectbox li {
+	min-height: 18px;
+	padding: 5px 10px 6px;
+	font-size: 12px;
+}
+.jq-selectbox li.optgroup {
+	font-weight: bold;
+}
+.jq-selectbox li.optgroup:hover {
+	cursor: default;
+}
+.jq-selectbox li.option {
+	padding-left: 25px;
+}
+
+
+// .jq-selectbox-MULTIPLE
+
+.jq-select-multiple {
+	margin-left: 5px;
+	margin-top: -2px;
+	vertical-align: middle;
+	cursor: pointer;
+	width: 135px;
+
+	@media (max-width: 991px){
+		margin-left: 0;
+		margin-top: 5px;
+	}
+
+	@media (max-width: 767px){
+		margin-top: 0;
+	}
+}
+.jq-select-multiple__select {
+	height: 30px;
+	padding: 0 30px 0 10px;
+	border: 1px solid;
+}
+
+.jq-select-multiple__select-text {
+	display: block;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 13px;
+	line-height: 30px;
+}
+.jq-select-multiple__trigger {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 20px;
+	height: 100%;
+	border: none;
+}
+.jq-select-multiple__trigger-arrow {
+	position: absolute;
+	top: 12px;
+	right: 8px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	border-top: 5px solid;
+	border-right: 5px solid;
+	border-left: 5px solid;
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.jq-select-multiple:hover .jq-select-multiple__trigger-arrow {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.jq-select-multiple.disabled .jq-select-multiple__trigger-arrow {
+	opacity: 0.3;
+	filter: alpha(opacity=30);
+}
+.jq-select-multiple__dropdown {
+	top: 30px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	border-radius: 0px;
+}
+.jq-select-multiple ul {
+	margin: 5px;
+	padding: 0;
+}
+.jq-select-multiple li {
+	min-height: 18px;
+	padding: 5px 10px 6px;
+	font-size: 12px;
+}
+.jq-select-multiple li.optgroup {
+	font-weight: bold;
+}
+.jq-select-multiple li.optgroup:hover {
+	cursor: default;
+}
+.jq-select-multiple li.option {
+	padding-left: 25px;
+}

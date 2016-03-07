@@ -1,0 +1,326 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1. General button theme / .btn-buy, .btn-plus, .btn-registration, .btn-subscribe
+2.  / .btn-item-action
+3.  / .rating-stars
+4.  / .btn-feedback-toggle
+5.  / .triangled-wrapper
+6.  / .btn-settings-toggle
+7.  / .btn-closebtn
+8.  / .btn-arrow
+9.  / .slider-controls
+10.  / .btn-silver
+11.  / .show-success, .show-fail
+12.  / .btn-modal-control
+13.  / .disabled
+14.  / .btn-submit
+15.  / .btn-sitemenu-toggle, .btn-search-toggle
+16.  / .btn-mainmenu-toggle
+17.  / .slick-prev, .slick-next
+18.  / .btn-buy.main-buy-btn, .btn-buy.small, .btn-buy.medium
+19.  / .btn-buy.main-buy-btn
+
+-------------------------------------------------------------------*/
+
+.btn-buy, 
+.btn-plus,
+.btn-registration,
+.btn-subscribe{
+	@extend %gradiented;
+	@extend %maingradient-btntext;
+}
+
+.btn-item-action{
+	color: #9d96a1;
+	background: none;
+	.btn-text{
+		border-bottom-color: fade-out(#9d96a1, 0.5);
+	}
+
+	&:hover, &.active{
+		.btn-text, &:before, &:after{
+			color: $color-main-dark;
+			border-bottom-color: transparent;
+		}
+	}
+	&:active{
+
+		.btn-text{
+			transition: none;
+			border-bottom-color: $color-main-dark;
+		}
+	}
+}
+
+.rating-stars{
+	.product-info &, .compare-item &{
+		// @extend %silver-normal-state;
+		border-bottom: 1px solid $color-main-dark;
+		.rating-star{
+			color: gray;
+			&.active{ color: #f9a400;}
+			&.hovered, &.clicked{ color: darken(#f9a400, 10%);}
+			
+		}
+	}
+
+	.feedback-content &{
+		.rating-star{
+			color: #e6e2e9;
+			&.active{ color: #b7afbc;}
+			&.hovered, &.clicked{ color: darken(#b7afbc, 10%);}
+		}
+	}
+	
+}
+
+.btn-feedback-toggle{
+
+	border-bottom-color: $gradient-main-click;	
+
+	.inner-btn{
+		background: white;
+		&:after {border-color: $gradient-main-click;}
+		&:before { background: $gradient-main-click;}
+	}
+
+	&:hover{
+		
+	}
+
+	&:active{
+		.inner-btn{
+			
+		}
+	}/* &:active */
+}/* .btn-feedback-toggle */
+
+.triangled-wrapper{
+	&:hover{
+		.btn-buy{
+			@extend %maingradient-hover-state;
+		}
+		.triangled:after{
+			background: linear-gradient(135deg, $color-main-hover-light, $color-main-hover-dark);
+			border-left-color: $color-border-hover-light;
+			border-bottom-color: $color-border-hover-dark;
+		}
+	}
+	&:active{
+		.btn-buy{
+			@extend %maingradient-click-state;
+			box-shadow: inset -3px 4px 5px -2px fade-out(#000, 0.5);
+			// ^ overriding standard shadows to hide left inner shadow
+			// and make triangle and button feel like one single element
+		}
+		.triangled:after{
+			background: linear-gradient(135deg, $color-main-click-dark, $color-main-click-light);
+			border-left-color: $color-border-click-dark;
+			border-bottom-color: $color-border-click-light;
+			box-shadow: inset 4px 0px 4px -3px fade-out(#000, 0.5);
+		}
+	}
+
+	&.disabled{
+		&, &:hover, &:active{
+			background: none;
+			.btn-buy{
+				@extend .disabled;
+				box-shadow: none;
+			}
+			.triangled:after{
+				display: block !important;
+				background: $gradient-disabled;
+				border-left-color: #ccc;
+				border-bottom-color: #ccc;
+				border-bottom: none;
+			}
+		}
+	}
+}
+
+.btn-settings-toggle{
+	transition: background .3s,
+				color .3s;
+	background: #f3f5f4;
+	box-shadow: 3px 2px 3px fade-out(black, 0.6);
+
+	color: $color-main-dark;
+	
+	&:hover{
+		color: $color-main-light;
+		background: lighten(#f3f5f4, 10%);
+	}
+	&:active{
+		transition: none;
+		color: $color-main-click-dark;
+		
+		box-shadow: none;
+		background: darken(#f3f5f4, 10%);
+	}
+	.um_container-opened &:active{
+		&:after{
+			color: $color-main-click-dark;
+			box-shadow: inset 0 1px 3px fade-out(black, 0.3);
+		}
+	}
+}
+
+.btn-closebtn{
+	transition: color 0.3s ease;
+	color: #000;
+	&:hover{ color: #8c8c8c;}
+	&:active{ 
+		transition: none;
+		color: #000;
+	}
+}
+
+.btn-arrow{
+	color: $color-main;
+	.btn-text, .btn-text:before{
+		color: $color-main;
+	}
+}
+
+.slider-controls{
+	li{
+		transition: background-color 0.3s;
+		background-color: #d6d0da;
+		box-shadow: inset 0 1px 1px rgba(0,0,0,0.35);
+		.flat & {box-shadow: none;}
+
+		&:hover{
+			background-color: #a59faa;
+			box-shadow: inset 0 1px 1px rgba(0,0,0,1);
+			cursor: pointer;
+			.flat & {box-shadow: none;}
+		}
+
+		&.active{ 
+			background-color: #ffd752;
+			.flat & {background-color: $color-main;}
+		}
+	}
+}
+
+// !important is used to override Bootstrap styles for links
+.btn-silver{
+	@extend %btn-silver;
+	color: $color-alphabet-text !important;
+
+	&.active{
+		@extend %maingradient-click-state;
+		@extend %maingradient-btntext;
+	}
+
+	&.disabled{
+		box-shadow: none;
+		&:before{
+			box-shadow: none;
+		}
+	}
+}
+
+.show-success, .show-fail{
+	@extend %btn-silver;
+}
+
+.btn-modal-control{
+	&.next, &.prev{
+		@extend %gradiented;
+		&:after{
+			color: #fff;
+			text-shadow: 0 1px 1px #383838;
+		}
+	}
+	
+}
+
+.disabled{
+	/* forcing disabled element to not respond visually to hover and clicks (in addition to pointer-events: none and JS stops) */
+	&, &:hover, &:active{
+		background: $color-disabled-bg;
+		background: $gradient-disabled;
+		&:before{
+			background: #d9d9d9;
+			background: $gradient-disabled-border;
+			box-shadow: 0px 1px 2px fade-out(#000, 0.6);
+		}
+		
+		text-shadow: 0px 1px 1px #fff;
+		.btn-text, .btn-text:before{
+			color: $color-disabled-text;
+		}
+	}
+
+	&:after{
+		display: none;
+	}
+}
+
+.btn-submit{
+	@extend %gradiented;
+	@extend %maingradient-btntext;
+}
+
+.btn-sitemenu-toggle, .btn-search-toggle{
+	color: #fff;
+	background: none;
+	transition: .3s;
+	@media(max-width: 767px){background: #2b2b2b;}
+	
+	&:hover, &:active{
+		color: white;
+		//background:rgba(black,.5);
+	}
+}
+
+.btn-mainmenu-toggle{
+	@extend %btn-silver;
+	.btn-text{
+		color: #282828;
+	}
+}
+
+
+.slick-prev,
+.slick-next{
+	background: rgba(#fff,.4);
+	opacity: .8;
+	color: transparent;
+	border-color: $color-main;
+	&:hover {background:rgba(#fff,.8);opacity: 1;}
+	&:after{
+		color: $color-main;
+	}
+}
+.btn-buy.main-buy-btn, .btn-buy.small, .btn-buy.medium{
+	background: #fff;
+	border-color: $color-main;
+	&, &:after{
+		color: $color-main-text;
+		background: none !important;
+		box-shadow: none !important;
+	}
+	&:before{
+		background: $color-main-light;
+	}
+	&:hover{
+		border-color: $color-main-dark;
+		&, &:after{
+			// color: #fff;
+		}
+	}
+	&:active:before{
+		background: $color-main;
+	}
+}
+
+.btn-buy.main-buy-btn{
+	&:after{
+		background: #fff !important; // over added2basket
+	}
+}

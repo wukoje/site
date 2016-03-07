@@ -1,0 +1,173 @@
+$color-disabled-text: #c1c1c1;
+$color-disabled-bg: #e8e8e8;
+$gradient-disabled: linear-gradient(#f3f5f4, #e8e8e8);
+$gradient-disabled-border: linear-gradient(#d9d9d9, #dddddd);
+
+$gradient-silver: #fff linear-gradient(#fff, #f3f5f4 100%);
+$gradient-silver-hover: #fff linear-gradient(#fff 6%, fade-out(#dcd6df, 0.67) 38%, fade-out(#9a91a2, 0.6));
+$gradient-silver-click: #fff linear-gradient(fade-out(#b4b4b4, 0.6) 25%, #fff);
+$gradient-silver-border: linear-gradient(#f0edf5, #cecae8 85%);
+$gradient-silver-border-hover: linear-gradient(#dfdbe5, #c4bfe2 85%);
+$gradient-silver-border-click: linear-gradient(#9d97aa, #cac9d2 85%);
+$color-silver-shadow: #393043;
+$color-alphabet-text: #76687f;
+$color-main: transparent;
+$color-main-dark: transparent;
+$color-btn-text: black;
+
+$input-border-normal: #ddd6e2;
+$input-border-hover: #cac0d1;
+$input-inner-shadow: #76687f;
+$input-inner-shadow-focus: #6d597a;
+
+$input-error-border: #f37777;
+$input-error-bg: #ffe2e2;
+$input-error-text: #e65758;
+$input-error-shadow: #cb6666;
+
+$input-success-border: #9edf84;
+$input-success-bg: #e1ffba;
+$input-success-text: #6cb94d;
+$input-success-shadow: #2a6400;
+
+$input-disabled-border: #ddd6e2;
+$input-disabled-bg: #f3eff6;
+$input-disabled-text: #d2cbd7;
+
+// chbox = checkbox
+$chbox-default-border-light: #f0edf5;
+$chbox-default-border-dark: #cecae8;
+$chbox-default-border-gradient: linear-gradient($chbox-default-border-light, $chbox-default-border-dark 85%);
+$chbox-default-bg-gradient: linear-gradient(to bottom, #f3f5f4, transparent);
+
+$divider-line: #bfb9c3;
+
+$social-ya-bg: #ed0707;
+$social-fb-bg: #367cbe;
+$social-ok-bg: #ff9c27;
+$social-vk-bg: #3b6e9e;
+$social-tw-bg: #62d1f5;
+
+// tab text colors
+$color-tab-text: #b7afbc;
+$color-tab-text_active: #fff;
+
+/* red colors for theme selection */
+$gradient-red: linear-gradient(#f93d3d, #a10000);
+$gradient-red-hover: linear-gradient(#ff7e7e, #db2424);
+$gradient-red-click: linear-gradient(#a10000, #f93d3d);
+
+$gradient-red-border: linear-gradient(#bf3a3a, #ff5858);
+$gradient-red-border-hover: linear-gradient(#dd2525, #ae1919);
+$gradient-red-border-click: linear-gradient(#732717, #c72b2b);
+
+$color-red-text: #481214;
+$color-red-text-shadow: #ff6c66;
+/* END OF red colors for theme selection */
+
+/* black colors for theme selection */
+$gradient-black: linear-gradient(#787878, #383838);
+$gradient-black-hover: linear-gradient(#aaaaaa, #565656);
+$gradient-black-click: linear-gradient(#aaaaaa, #7a7a7a);
+
+$gradient-black-border: linear-gradient(#666, #111);
+$gradient-black-border-hover: linear-gradient(#787878, #242424);
+$gradient-black-border-click: linear-gradient(#eeeeee, #333333);
+
+$color-black-text: #fff;
+$color-black-text-shadow: #000;
+/* END OF black colors for theme selection */
+
+/* yellow colors for theme selection */
+$gradient-yellow: linear-gradient(#ffcf29, #fd9842);
+$gradient-yellow-hover: linear-gradient(#ffe179, #ffb373);
+$gradient-yellow-click: linear-gradient(#fd9842, #ffcf29);
+
+$gradient-yellow-border: linear-gradient(#ffae00, #cd8200);
+$gradient-yellow-border-hover: linear-gradient(#ffae00, #cd8200);
+$gradient-yellow-border-click: linear-gradient(#965b16, #cb8235);
+
+$color-yellow-text: #411f00;
+$color-yellow-text-shadow: #ffdb6c;
+/* END OF yellow colors for theme selection */
+
+/* purple colors for theme selection */
+$color-purple-text: #231248;
+$color-purple-text-shadow: #d197ff;
+
+$gradient-purple: linear-gradient(#b364ef, #683fc6);
+$gradient-purple-hover: linear-gradient(#d39bff, #6e41c0);
+$gradient-purple-click: linear-gradient(#5f3fb6, #a95fe9);
+
+$gradient-purple-border: linear-gradient(#ab60eb, #4e29a2);
+$gradient-purple-border-hover: linear-gradient(#ab60eb, #48239d);
+$gradient-purple-border-click: linear-gradient(#2c1a7a, #622489);
+/* END OF purple colors for theme selection */
+
+/* green colors for theme selection */
+$color-green-text: #1b2d00;
+$color-green-text-shadow: #81d600;
+
+$gradient-green: linear-gradient(#74c100,#3c6300);
+$gradient-green-hover: linear-gradient(#87df00, #508400);
+$gradient-green-click: linear-gradient(#3c6300, #74c100);
+
+$gradient-green-border: linear-gradient(#375c00, #203600);
+$gradient-green-border-hover: linear-gradient(#375c00, #203600);
+$gradient-green-border-click: linear-gradient(#274001, #467302);
+/* END OF green colors for theme selection */
+
+/* blue colors for theme selection */
+$color-blue-text: #0b1646;
+$color-blue-text-shadow: #70c4ff;
+
+$gradient-blue: linear-gradient(#45abe0, #3048c0);
+$gradient-blue-hover: linear-gradient(#6dcdff, #2845d7);
+$gradient-blue-click: linear-gradient(#1932b4, #45abe0);
+
+$gradient-blue-border: linear-gradient(#426cea, #09235c);
+$gradient-blue-border-hover: linear-gradient(#426cea, #09235c);
+$gradient-blue-border-click: linear-gradient(#0d228c, #1e89cc);
+/* END OF blue colors for theme selection */
+
+/* babyboom colors for theme selection */
+$color-babyboom-text: #113880;
+$color-babyboom-text-shadow: #8ff2ff;
+
+$gradient-babyboom: linear-gradient(#ffb5ee, #58baff);
+$gradient-babyboom-hover: linear-gradient(#ffd7f6, #8fd1ff);
+$gradient-babyboom-click: linear-gradient(#58baff, #ffb5ee);
+
+$gradient-babyboom-border: linear-gradient(#ff8ebe, #1e65db);
+$gradient-babyboom-border-hover: linear-gradient(#ffb4d4, #3380ff);
+$gradient-babyboom-border-click: linear-gradient(#2044a9, #d76ea7);
+/* END OF babyboom colors for theme selection */
+
+/* bb2 colors for theme selection */
+$gradient-bb2: linear-gradient(#fdff4d, #b4e800);
+$gradient-bb2-hover: linear-gradient(#feffad, #d8ff4f);
+$gradient-bb2-click: linear-gradient(#b4e800, #fdff4d);
+
+$gradient-bb2-border: linear-gradient(#dad811, #7c8e00);
+$gradient-bb2-border-hover: linear-gradient(#d3d119, #7c8e00);
+$gradient-bb2-border-click: linear-gradient(#5a6f05, #b9bd22);
+
+$color-bb2-text: #3e4c04;
+$color-bb2-text-shadow: #f8ff55;
+/* END OF bb2 colors for theme selection */
+
+/* flat */ 
+	$color-flat-cyan: #1abc9c;
+	$color-flat-red:#FF5442;
+	$color-flat-black:#333;
+	$color-flat-lightblue:#54ACD2;
+	$color-flat-yellow: #FFDA32;
+	$color-flat-purple:#BF55EC;
+
+	$color-flat-cyan-hover: #5BE2C7;
+	$color-flat-red-hover:#FF786B;
+	$color-flat-black-hover:#666;
+	$color-flat-lightblue-hover: #89D1F1;
+	$color-flat-yellow-hover: #ffe466;
+	$color-flat-purple-hover:#DA81FF;
+/* END flat */

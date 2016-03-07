@@ -1,0 +1,53 @@
+<form method="post" action="#" class="form_registration">
+	<h2><span class="header-text">Sign up</span></h2>
+	<div class="switch-form-block">or <button class="btn-form-switch" data-toggle="modal" data-target="#modal_registration, #modal_login" type="button"><span class="btn-text">sign in</span></button></div>
+	<div class="radio-group">
+		<label class="radio-styled">
+			<input type="radio" name="auto-generation" id="auto-generation" value="true">
+			<span class="radio-content">Generate login and password</span>
+		</label>
+		<label class="radio-styled">
+			<input type="radio" name="auto-generation" id="auto-generation-false" value="false" checked>
+			<span class="radio-content">Specify login and password</span>
+		</label>
+	</div>
+	<label class="textinput-wrapper">
+		<span class="label-text">Login<span class="asterisk-required">*</span></span>
+		<input type="text" name="reg-username" id="reg-username" placeholder="Login" class="textinput" required>
+	</label>
+	<label class="textinput-wrapper">
+		<span class="label-text">Password<span class="asterisk-required">*</span></span>
+		<input type="password" name="reg-password" id="reg-password" placeholder="Password" class="textinput password" required>
+		<a href="#" class="btn-input password-toggle"></a>
+	</label>
+	<label class="textinput-wrapper">
+		<span class="label-text"><span class="inner-text">Password again<span class="asterisk-required">*</span></span></span>
+		<input type="password" name="reg-password-repeat" id="reg-password-repeat" placeholder="Password again" class="textinput password" required>
+		<a href="#" class="btn-input password-toggle"></a>
+	</label>
+	<label class="textinput-wrapper">
+		<span class="label-text">E-mail<span class="asterisk-required">*</span></span>
+		<input type="email" name="email" id="email" placeholder="E-mail" class="textinput" required>
+	</label>
+	<label class="textinput-wrapper">
+		<span class="label-text">Name</span>
+		<input type="text" name="first-name" id="first-name" placeholder="Name" class="textinput">
+	</label>
+	<label class="textinput-wrapper">
+		<span class="label-text">Surname</span>
+		<input type="text" name="last-name" id="last-name" placeholder="Surname" class="textinput">
+	</label>
+	<div class="anti-robot clearfix">
+		<label class="textinput-wrapper">
+			<input type="text" name="captcha" id="captcha" placeholder="Picture code" class="textinput" required>
+			<span class="label-text">Picture code<span class="asterisk-required">*</span></span>
+			<span class="captcha"><img src="img/captcha.jpg" alt="Picture code"></span>
+		</label>
+	</div>
+	<div class="required-info"><span class="asterisk-required">*</span>Fields marked with asterisk are required</div>			
+	<label class="checkbox-styled">
+		<input type="checkbox" name="accept-agreement" id="accept-agreement" class="checkbox-styled">
+		<span class="checkbox-content">I agree with <a href="#">Terms and Conditions</a></span>
+	</label>
+	<button class="btn-submit"><span class="btn-text">Sign Up</span></button>
+</form>

@@ -1,0 +1,54 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .compare-inner-wrapper
+2.  / .compare-items
+3.  / .compare-table
+
+-------------------------------------------------------------------*/
+
+.compare-inner-wrapper{
+	border-bottom-color: #b2c4c9;
+}
+.compare-items{
+	.item-name a{
+		transition: .4s;
+		color: #0077e6;
+		border-bottom-color: fade-out(#0077e6, 0.6);
+
+		&:hover{
+			color: $color-main-dark;
+			border-bottom-color: transparent;
+		}
+		&:active{
+			color: $color-main-click-dark;
+		}
+	}
+
+	.img-container{
+		img{
+			border-color: transparent;
+			&:hover{ border-color: $color-main-dark;}
+		}
+		
+	}
+}
+.compare-table{
+	color: #2b3946;
+	thead > tr{ 
+		background-color: #fff;
+	}
+	tbody tr:nth-of-type(odd), tbody tr.odd{
+		background-color: #fff;
+	}
+	tbody tr:nth-of-type(even), tbody tr.even{ background-color: #f3eff5;}
+	tbody th{ color: #9e93a5;}
+
+	&.clone.column{
+		background: #fff;
+	}
+	td:nth-child(even), th:nth-child(even){
+		background: fade-out(#000, 0.95);
+	}
+}

@@ -1,0 +1,18 @@
+
+// Brands-page theme
+
+.brands-page{
+	.brands-all{
+		a{
+			&, &:link, &:visited, &:hover, &:active{
+				color: #1c81e9;
+			}
+			
+			.text{ border-color: fade-out(#1c81e9, 0.5);}
+
+			&:hover .text{ border-color: transparent;}
+
+			&:active .text{ border-color: #1c81e9;}
+		}
+	}
+}

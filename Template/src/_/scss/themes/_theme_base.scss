@@ -1,0 +1,71 @@
+/* mixins and @extend templates */
+@import 'components/templates-theme';
+
+/* buttons */
+@import 'components/buttons-theme';
+
+/* popups and modals */
+@import 'components/popups&modals-theme';
+
+/* inputs */
+@import 'components/inputs-theme';
+
+/* links and breadcrumbs */
+@import 'components/links-theme';
+
+/* navigation (menus, tags) */
+@import 'components/nav&tags-theme';
+
+/* switches */
+@import 'components/switches-theme';
+
+/* sliders */
+@import 'components/sliders-theme';
+
+/* mCustomScrollbar */
+@import 'components/scrollbar-theme';
+
+/* all menus */
+@import 'components/menu-theme';
+
+/* tooltips */
+@import 'components/tooltips-theme';
+
+/* forms */
+@import 'components/forms-theme';
+
+/* header color styling */
+@import 'components/header-theme';
+
+/* footer color styling */
+@import 'components/footer-theme';
+
+/* basket (big, popup and others) */
+@import 'components/basket-theme';
+
+/* comparison page and table styling */
+@import 'components/comparison-theme.scss';
+
+/* main page color styling */
+@import 'components/main-page-theme';
+
+/* catalog page styling (NOT catalog itself) */
+@import 'components/catalog-page-theme';
+
+/* catalog styling (catalog itself, NOT page with it!) */
+@import 'components/catalog-theme';
+
+/* site-map and 404 */
+@import 'components/site-map-theme';
+
+/* product page styling */
+@import 'components/product-page-theme';
+
+/* account pages styling */
+@import 'components/account-pages-theme';
+
+/* order making pages */
+@import 'components/order-pages-theme';
+
+/* brands page */
+@import 'components/brands-page-theme';

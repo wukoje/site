@@ -1,0 +1,78 @@
+<div class="container catalog-page">
+	<div class="row">
+	
+			<?php include '_/html/main-menu.html'; ?>
+	</div><!-- /row -->
+	<div class="row">
+		<aside class="col-sm-3">
+			<?php include '_/html/catalog-menu.html'; ?>
+			<?php include '_/html/catalog-filter.html'; ?>
+		</aside><!-- /col-sm-3 -->
+		<main class="col-sm-9">
+			<div class="promos row">
+				<div class="col-sm-12 promo-wrap">
+					<a href="catalog.php" class="promo-link">
+						<img src="img/promo/promo-catalog.jpg" alt="Catch the Wave">
+						<span class="promo-hover"></span>
+					</a>
+				</div>
+			</div><!-- /promos.row -->
+			<div class="breadcrumbs">
+				<? include '_/html/elements/_breadcrumbs.html'; ?>
+			</div><!-- /breadcrumbs -->
+			<div class="v-type-switch-wrap">
+				<span class="text">View:</span>
+				<div class="view-type-switcher">
+					<button class="btn-blocks"></button><!--
+					--><button class="btn-list"></button><!--
+					--><button class="btn-table"></button>
+					<div class="box v-list"></div>
+				</div>
+			</div>
+			<h2>Dresses</h2>
+			<form action="#" method="post" class="view-options-form sort-by">
+				<?php include '_/html/_show-by.html'; ?>
+				<span class="sort-by-text">Sort by:</span>
+				<select name="sort-by" id="sort-by">
+					<option>Item name +/-</option>
+					<option>Popularity +/-</option>
+					<option>Price +/-</option>
+					<option>Views +/-</option>
+					<option>Sales +/-</option>
+					<option>Brand +/-</option>
+					<option>Sales +/-</option>
+					<option>Sales +/-</option>
+				</select>
+				
+			</form>
+			<?php include '_/html/_pagination.html'; ?>
+			<div class="catalog catalog-list clearfix">
+				<?php include '_/html/_catalog-items-demo2.html'; ?>
+			</div>
+			<?php include '_/html/_show-by.html'; ?>
+			<?php include '_/html/_pagination.html'; ?>
+			<div class="aside-promos row">
+				<div class="col-sm-4">
+					<a href="#" class="aside-promo">
+						<img src="img/promo/aside-promo1.jpg" alt="">
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="aside-promo">
+						<img src="img/promo/aside-promo2.jpg" alt="">
+					</a>
+				</div>
+				<div class="col-sm-4">
+					<a href="#" class="aside-promo">
+						<img src="img/promo/aside-promo3.jpg" alt="">
+					</a>
+				</div>
+				
+			</div>
+
+		</main><!-- /col-sm-9 -->
+		<div class="col-sm-12 small-banner">
+			<img src="img/brands/catalog-brands.jpg" alt="Promotion block">
+		</div>
+	</div><!-- /row -->
+</div><!-- /container -->

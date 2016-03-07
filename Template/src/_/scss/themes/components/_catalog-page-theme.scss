@@ -1,0 +1,79 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .view-options-form
+2.  / .filter-header
+3.  / .filter-section
+4.  / .filter-check-selection
+5.  / .color-selection
+6.  / .btn-show-full-filter
+
+-------------------------------------------------------------------*/
+
+.view-options-form{
+	border-color: #e0dee2;
+
+	border-bottom-color: $divider-line;
+
+	&:after, &:before{ border-color: transparent;}
+	&:before{ border-bottom-color: $color-main-dark;}
+	&:after{ border-top-color: $color-main-dark;}
+}
+
+
+// filters start
+.filter-header{
+	border-top-color: $divider-line;
+}
+
+.filter-section{
+	h3{
+		border-color: $divider-line;
+	}
+
+	.expand-content{
+		border-color: $divider-line;
+	}
+}
+
+
+.filter-check-selection {
+
+	.checkbox-content:before{background: $gradient-main-click;}
+}
+
+.color-selection{
+	.checkbox-styled{
+		.checkbox-content:before{
+			border-color: $divider-line;
+			box-shadow: 0 1px 4px fade-out(#393043, 0.72);
+		}
+		&:hover{
+			.checkbox-content:before{
+				border-color: $color-main-dark;
+			}
+		}
+
+		
+
+		.red:before{ background: red;}
+		.white:before{ background: white;}
+		.blue:before{ background: blue;}
+		.green:before{ background: green;}
+		.black:before{ background: black;}
+		.lightblue:before{ background: lightblue;}
+		.lightgreen:before{ background: lightgreen;}
+		.aquamarine:before{ background: aquamarine;}
+		.beige:before{ background: beige;}
+		.coral:before{ background: coral;}
+		.violet:before{ background: violet;}
+		.orange:before{ background: orange;}
+		.aquamarine:before{ background: aquamarine;}
+	}
+	
+}
+
+.btn-show-full-filter{
+	@extend %btn-silver;
+}

@@ -1,0 +1,143 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .product-page
+2.  / .medium-image-wrap
+3.  / .product-page-parameters-form
+4.  / .recommended-item
+5.  / .medium-image
+6.  / .intermediate
+7.  / .zoom-controls
+8.  / .med-img-zoom-container
+9.  / .thumbnails
+
+-------------------------------------------------------------------*/
+
+.product-page{
+	.breadcrumbs{
+		border-color: $divider-line;
+
+		&:after, &:before{ border-color: transparent;}
+		&:before{ border-bottom-color: $color-main-dark;}
+		&:after{ border-top-color: $color-main-dark;}
+	}
+
+	h2, h3{
+		background: #f3f5f4;
+	}
+
+	.product-type{
+		color: gray;
+	}
+	.product-description{
+		color: #5b525d;
+	}
+	.product-info-detailed{
+		td{ color: #7d7681;}
+		tr:nth-child(odd){
+			background: #f3f3f3;
+		}
+	}
+	.benefits{
+		border-top-color: #b7afbc;
+
+		.circle-styled{
+			@extend %maingradient-normal-state;
+		}
+	}
+
+	.profitable-items-price{
+		.special-price-text, .special-price-small{
+			color: #b5b3c1;
+		}
+	}
+
+}
+
+.medium-image-wrap{
+	.stickers-container{
+		.sticker{
+			background: none;
+		}
+	}
+	.product-action-link{
+		&:hover{
+			&>span{
+				color: lighten(#000, 50%);
+			}
+		}
+		&>span{
+			color: #000;
+		}
+		&.active{
+			&, &>span{
+				color: $color-main-dark;
+			}
+		}
+	}
+	
+}
+.product-page-parameters-form{
+	border-bottom-color: $color-main;
+}
+
+.recommended-item{
+	h4, .price, h4>a{ color: #000;}
+	h4>a{ border-bottom-color: fade-out(#000, 0.5);}
+	&:hover h4>a{ border-bottom-color: transparent;}
+	p{ color: #9a90a0;}
+}
+
+.medium-image{
+	border-color: #dddddd;
+}
+.intermediate{
+	.current-photo-info{ color: #b4b1c6;}
+	
+}
+.zoom-controls{ 
+	color: #8b858f;
+	.text{ border-color: fade-out(#8b858f, 0.6);}
+	&:hover{ 
+		.text{ 
+			border-color: transparent;
+			color: $color-main-dark;
+		}
+		&:before{
+			color: $color-main-dark;
+		}
+	}
+	&:active{
+		.text{
+			transition: none;
+			border-color: $color-main-dark;
+		}
+	}
+
+	td.main-data &{
+		color: #b7afbc;
+		.text{ border-color: fade-out(#b7afbc, 0.5);}
+		&:hover{
+			.text{ 
+				border-color: transparent;
+			}
+		}
+		&:active{
+			.text{
+				transition: none;
+				border-color: $color-main-dark;
+			}
+		}
+	}
+}
+.med-img-zoom-container{
+	border: 1px solid $color-main;
+}
+.thumbnails{
+	.slick-slide{
+		&.active img{
+			outline-color: $color-main;
+		}
+	}
+}

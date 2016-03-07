@@ -1,0 +1,83 @@
+/*------------------------------------------------------------------
+Pages styling - Site map & 404
+
+1. Site map / .site-map
+2. Menu site map / .site-map-menu
+3. Page 404 / .page-404
+
+-------------------------------------------------------------------*/
+
+.site-map{
+
+	h2{
+		font-size: 24px;
+		font-weight: bold;
+		margin-bottom: 20px;
+	}
+}/* .site-map */
+
+.site-map-menu{
+	display: inline-block;
+	&, ul{
+		list-style: none;
+		padding: 10px 0px 10px 0px;
+
+		&>li.expandable{
+			&>.map-item>.icon{
+				&:after{ content: "\e013";}
+			}
+			
+			&.expanded>.map-item>.icon:after{ content: "\e013";}
+		}
+	}
+	.expand-content{
+		padding-left: 30px;
+	}
+	li{
+		position: relative;
+		padding: 5px 0px;
+		.map-item:hover{
+			cursor: pointer;
+		}
+		.icon{
+			display: inline-block;
+			position: relative;
+			@extend %btn-std;
+			&:active{
+				padding-top: 0;
+			}
+			height: 26px;
+			width: 26px;
+			margin-right: 0px;
+			&:after{
+				font-family: Flaticon;
+				font-weight: normal;
+				content: "\e020";
+				line-height: 26px;
+				position: relative;
+				top: 2px;
+				left: 0;
+
+				font-size: 16px;
+			}
+		}/* .icon */
+		a{
+			transition: .3s;
+			text-decoration: none;
+			border-bottom: 1px solid;
+		}
+		
+	}/* li */
+			
+	
+
+	&>li:first-child .icon:after{ content: "\e017";}
+}/* .site-map-menu */
+
+.page-404{
+	h2 {font-size: 72px;}
+	p{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+}

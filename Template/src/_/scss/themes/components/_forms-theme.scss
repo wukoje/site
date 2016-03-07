@@ -1,0 +1,224 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .textarea-styled
+2.  / .form_account-settings
+3.  / .form_login, .form_registration
+4.  / .captcha
+5.  / .form_registration
+6.  / .social
+7.  / .form-order
+8.  / .validity-alert
+
+-------------------------------------------------------------------*/
+
+.textarea-styled{
+	background: #fafafa;
+	border-color: #ddd6e2;
+	&:hover{
+		border-color: $input-border-hover;
+		box-shadow: inset 0 3px 4px fade-out($input-inner-shadow, 0.61);
+		.flat & {box-shadow: none;}
+	}
+	&:focus{ border-color: $color-main-dark;}
+	box-shadow: inset 0px 1px 4px fade-out(#76687f, 0.52);
+	.flat & {box-shadow: none;}
+}
+
+.form_account-settings{
+	color: #000;
+	.textinput{ 
+		color: #000;
+		&.short{
+
+			&+.btn-plus{
+				&:before{
+					box-shadow: none;
+				}
+			}
+		}
+	}
+
+	.settings-list{
+		ul{	border-bottom-color: #c1c1c1;}
+		li{ 
+			transition: 0.3s;
+			color: #000;
+			&:hover{
+				cursor: default;
+				background: fade-out(#000, 0.9);
+			}
+		}/* li */
+	}/* .settings-list */
+
+	
+	.item-actions{
+		.btn-text{
+			color: #000;
+			border-bottom-color: fade-out(#000, 0.6);
+		}
+		.action-delete:before{
+			color: red;
+		}
+		&:hover{
+			.btn-text{ border-bottom-color: transparent;}
+		}
+	}/* .item-actions */
+
+	.avatar{
+		.img-container{	border-color: #cdd8db;}
+
+		.btn-fileinput{
+			@extend %gradiented;
+			@extend %maingradient-btntext;
+			&:before{
+				box-shadow: none;
+			}
+		}
+	}
+
+	.social-list li{
+		&:hover{
+			background: fade-out(#000, 0.9);
+		}
+	}
+}/* .form_account-settings */
+
+.form_login, .form_registration{
+	h2{
+		.header-text:before{
+			background: $color-main-dark;
+			background: $gradient-main;
+			box-shadow: inset 0 1px rgba(255,255,255,0.30),
+						0 1px 2px rgba(0,0,0,0.56);
+			color: $color-main-text;
+			text-shadow: 0px 1px 1px $color-main-text-shadow;
+		}
+	}
+	.switch-form-block{
+		color: #949494;
+		.btn-form-switch{
+			background: none;
+			.btn-text{
+				transition: 0.3s;
+				color: #1453e2;
+				border-bottom-color: fade-out(#1453e2, 0.5);
+			}
+			&:hover{
+				.btn-text{
+					border-bottom-color: transparent;
+				}
+			}/* &:hover */
+		}/* .form-reg-open */
+	}/* .login-to-register */
+
+	.forgot-pass{
+		color: #0069d4;
+		border-bottom-color: fade-out(#0069d4, 0.5);
+		&:hover{ border-bottom-color: transparent;}
+	}
+
+	.social-text, .label-text{
+		color: #5a555d;
+
+	}
+
+	.asterisk-required{
+		color: red;
+	}
+
+}/* .form-login, .form_registration */
+.captcha{
+	border-color: #aabcc3;
+}
+.form_registration{
+	.required-info{
+		color: #5a555d;
+	}
+	
+	.checkbox-content{
+		color: #5a555d;
+		a{
+			&, &:link, &:visited, &:hover, &:active{
+				color: #009cff;
+				border-color: fade-out(#009cff, 0.5);
+				&:hover{ border-color: transparent;}
+			}
+		}
+	}
+}
+
+.social{
+	&.tw{ background-color: $social-tw-bg;}
+	&.vk{ background-color: $social-vk-bg;}
+	&.ok{ background-color: $social-ok-bg;}
+	&.fb{ background-color: $social-fb-bg;}
+	&.ya{ background-color: $social-ya-bg;}
+
+	&:hover{
+		opacity: 0.8;
+		transition: opacity 0.3s ease;
+	}
+}/* .social */
+
+.form-order{
+	h3{
+		color: #2b3946;
+		border-bottom-color: #c8c2cb;
+	}
+
+	input[name="payer-type"]+.radio-content, .delivery-info{
+		color: #5a555d;
+	}
+
+	.buyer-info-toggle{
+		color: #0077e6;
+		border-bottom-color: fade-out(#0077e6, 0.5);
+	
+		&:hover{ 
+			border-bottom-color: transparent;
+		}
+		&:active{
+			transition: none;
+			border-bottom-color: #0077e6;
+		}
+	}
+	
+	.delivery-type, .payment-system-type{
+		.radio-item{
+			border-color: transparent;
+			&-header{ color: #5a555d;}
+			&-description{ color: #5a555d;}
+
+			&:hover{
+				border-color: #c8c2cb;
+				box-shadow: 0px 1px 4px fade-out(#000, 0.5);
+			}
+		}
+		input:checked+.radio-item{
+			border-color: $color-main-dark;
+			box-shadow: 0px 1px 4px fade-out(#000, 0.5);
+		}
+
+	}
+
+	.radio-img{	
+		// @extend %silver-normal-state;
+		background: #f3f5f4;
+	}
+	.basket{ border-top-color: transparent;}
+	.total-price, .total-weight{
+		color: #000;
+		span{ color: $color-main-dark;}
+	}
+}/* .form-order */
+
+// improperly filling form tips stylization
+.validity-alert{
+	.ws-po-arrowbox{ border-bottom-color: #cecae8;}
+
+	.ws-po-box{
+		background-color: #cecae8;
+	}
+}

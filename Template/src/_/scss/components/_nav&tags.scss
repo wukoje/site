@@ -1,0 +1,268 @@
+/*------------------------------------------------------------------
+Navigation - Navs & tags
+
+1. Tags in filter / .tag
+2. Pagination / .pagination
+3. Item of pagination / .pagination-item
+4. Buttons for  switch tab / .um_tabs + .um_tab
+5. Content of tab / .tab-target
+6. Feedback block / .feedback-block
+7. Alphabet / .alphabet-menu + .alphabet
+
+-------------------------------------------------------------------*/
+
+.tag{
+	display: inline-block;
+	margin-top: 5px;
+	position: relative;
+	border-radius: 4px;
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: $uppercase-letter-spacing;
+	height: 23px;
+	line-height: 25px;
+	padding-left: 10px;
+	padding-right: 25px;
+
+	&:hover{ cursor: pointer;}
+
+	.btn-closebtn{
+		position: absolute;
+		width: 23px;
+		height: 23px;
+		line-height: 24px;
+		top: 0px;
+		right: 0;
+		.btn-text:before{
+			position: static;
+			font-size: 21px;
+		}
+	}
+}
+
+.pagination{
+	display: block;
+	text-align: center;
+	margin-top: 15px;
+	margin-bottom: 15px;
+
+	@media (max-width: 767px){
+		display: none;
+	}
+}
+
+.pagination-item{
+	// @extend %btn-std;
+	display: inline-block;
+	vertical-align: middle;
+	min-width: 30px;
+	height: 30px;
+	line-height: 30px;
+	position: relative;
+	transition: .2s;
+
+	&, &:link, &:visited, &:hover, &:active{
+		text-decoration: none;
+		outline: none;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		bottom: 2px;	
+		left: 0;
+		right: 0;
+		height: 2px;
+		transition: .2s;
+		opacity: 0;
+		transform: scale(0);
+	}
+	
+	&:hover{
+		cursor: pointer;
+
+		&:before {transform: scale(1);opacity: .4;}
+	}
+
+	&.arrow{
+		@extend %pg-arrow;
+
+		.btn-text:before{
+			line-height: 30px;
+			font-size: 16px;
+		}
+
+		&.left > .btn-text:before{ 
+			margin-left: -2px;
+		}
+		&.right > .btn-text:before{
+			margin-left: 2px;
+		}
+	}
+
+	&.to-start, &.to-end{
+		padding-left: 5px;
+		padding-right: 5px;
+
+		.btn-text{
+			text-transform: uppercase;
+			font-size: 14px;
+			position: relative;
+			top: -1px;
+		}
+
+		@media (max-width: 1200px){
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		@media (max-width: 991px){
+			display: none;
+		}
+	}
+
+	&.active{
+		pointer-events: none;
+		cursor: default;	
+
+		&:before {transform: scale(1);opacity: 1;}
+	}
+}
+
+.um_tabs{
+	position: relative;
+	z-index: 1;
+	text-align: center;
+	padding-bottom: 10px;
+
+	.order-step1-page &{
+		border-bottom: none;
+		margin-bottom: 2px;
+		width: 100%;
+
+		.tabs-text{
+			margin-right: 30px;
+			margin-top: 10px;
+		}
+	}
+	.tabs-text{
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 12px;
+		padding-left: 10px;
+		text-transform: uppercase;
+		letter-spacing: $uppercase-letter-spacing;
+	}
+
+
+	&:before {
+
+		content: '';
+		position: absolute;
+		height: 1px;
+		left: 0;
+		right: 0;
+		top: 21px;
+	}
+
+	@media (max-width: 767px){
+		width: 100%;
+	}
+}
+.um_tab{
+
+	display: inline-block;
+	vertical-align: top;
+	padding: 8px 15px 6px;
+	margin-bottom: 4px;
+	position: relative;
+	font-weight: normal;
+	transition: .2s;
+	margin: 0 15px;
+	z-index: 2;
+		
+	&:before {
+
+		content: '';
+		position: absolute;
+		bottom: 2px;	
+		left: 0;
+		right: 0;
+		height: 2px;
+		transition: .2s;
+		opacity: 0;
+		transform: scale(0);
+		z-index: 1;
+	}
+
+	&:after {
+
+		content: '';
+		position: absolute;
+		left: -18px;
+		right: -18px;
+		top: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+	
+	&:hover{
+		cursor: pointer;
+
+		&:before {transform: scale(1);opacity: .4;}
+	}
+
+	&.active {
+		&:before {transform: scale(1);opacity: 1;}
+	}
+
+	.order-step1-page &{
+		vertical-align: middle;
+		border-radius: 4px;
+		&:before{ border-radius: 4px;}
+		
+		margin: 10px 30px 0 0;
+
+	}
+}
+
+.tab-target{
+	position: relative;
+	z-index: 1;
+
+	padding-top: 15px;
+	padding-bottom: 15px;
+
+	.order-step1-page &{
+		border: none;
+	}
+}
+
+.feedback-block{
+	margin-top: 15px;
+	.user-info{
+		width: 120px;
+		float: left;
+		.secondary-link{ font-size: 13px;}
+		.avatar{
+			max-width: 90%;
+			min-height: 70px;
+		}
+	}
+	.feedback-content{
+		margin-left: 120px;
+		.date{
+			font-size: 12px;
+			margin-bottom: 5px;
+		}
+	}
+}
+
+.alphabet-menu {margin: 30px 0;text-align: center;}
+
+.alphabet{
+	margin-top: 5px;
+	font-size: 18px;
+	line-height: 3em;
+	text-align: center;
+}

@@ -1,0 +1,73 @@
+/*------------------------------------------------------------------
+Sliders - Range slider
+-------------------------------------------------------------------*/
+.price-range-slider-wrap{
+	display: block;
+	margin-top: 50px;
+	width: 500px;
+
+	/* Slider size and handle placement;
+	 */
+	.noUi-horizontal {
+		height: 6px;
+	}
+	.noUi-horizontal .noUi-handle {
+		width: 14px;
+		height: 17px;
+		left: -7px;
+		top: -6px;
+	}
+	
+	/* Styling;
+	 */
+	.noUi-origin {
+	 	border-radius: 3px;
+	}
+	.noUi-target {
+		border-radius: 3px;
+		border: none;
+	}
+	
+	.noUi-connect:before{
+		content: '';
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		bottom: 0px;
+		right: 0px;
+		z-index: 0;
+		border-radius: 4px;
+	}
+	/* Handles and cursors;
+	 */
+	.noUi-dragable {
+		cursor: w-resize;
+	}
+	.noUi-handle {
+		border: 1px solid;
+		border-top: none;
+		cursor: pointer;
+		border-radius: 0;
+	}
+
+	/* Handle stripes;
+	 */
+	.noUi-handle:before,
+	.noUi-handle:after {
+		position: absolute;
+		content: '';
+		border: 7px solid transparent;
+		bottom: 100%;
+		left: -1px;
+	}
+
+	.noUi-handle:before{
+		border-bottom-color: #ffcf29;
+	}
+	.noUi-handle:after{
+		border-bottom-color: #ffef8e;
+		border-width: 6px;
+		margin-top: 3px;
+		left: 0px;
+	}
+}

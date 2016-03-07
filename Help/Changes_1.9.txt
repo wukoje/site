@@ -1,0 +1,7 @@
+Apparel 1.9 changes:
+1. Improved documentation inside SCSS stylesheets (table of contents for base.scss);
+2. Removed color theme switcher from demo (html & js);
+3. Changed gulp compile settings: now SCSS compiles to fully expanded CSS with comments.
+4. Changed jQuery version from 2.2.0 to 1.12.0 (latest 1.x) for older browsers' support.
+5. Moved jQuery from head to footer because it is no longer necessary in head.
+6. All js libraries are now non-minified - even 3rd-party (vendor) ones! Minified versions are still there, in 'minified' folder.

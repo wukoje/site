@@ -1,0 +1,244 @@
+<div class="um_tabs">
+<!-- um_ is used to avoid conflicts with bootstrap, which has tabs too,
+but I don't like them and use my own -->
+	<button class="um_tab active" data-tab-target="#product-reviews">
+		Reviews (<span class="reviews-number">3</span>)
+	</button><!-- 
+	 --><button class="um_tab" data-tab-target="#product-questions">
+		Questions (<span class="questions-number">15</span>)
+	</button>
+</div><!-- /um_tabs -->
+<div class="tab-target" id="product-reviews">
+	<a href="#" class="secondary-link btn-post-feedback">Write review</a>
+	<a href="#" class="secondary-link btn-cancel-feedback">Hide form</a>
+	<!-- to apply styles for authorized user, apply class "authorized" to the form right below -->
+	<form action="#" method="post" class="form_post-feedback feedback-block">
+		<div class="user-info">
+			<div class="avatar">
+				<img src="img/avatars/demo1.jpg" alt="Avatar">
+			</div>
+			<a href="#" class="secondary-link">Mary H.</a>
+		</div><!-- /review-user -->
+		<div class="feedback-content">
+			<textarea name="post-review" id="post-review" cols="30" rows="5" class="textarea-styled"></textarea>
+			<div class="inputs clearfix">
+				<label class="input-wrapper non-authorized-info">
+					<span class="label-text">Name:</span>
+					<input type="text" name="reviewer-name" id="reviewer-name" class="textinput">
+				</label>
+				<label class="input-wrapper non-authorized-info">
+					<span class="label-text">e-mail:</span>
+					<input type="text" name="reviewer-email" id="reviewer-email" class="textinput">
+				</label>
+				<div class="input-wrapper captcha-wrap">
+					<span class="captcha"><img src="img/captcha.jpg" alt="Picture code"></span>
+					<input type="text" name="review-captcha" id="review-captcha" class="textinput" placeholder="Picture code">
+				</div>
+				<div class="input-wrapper">
+					<button class="btn-submit">Submit</button>
+				</div>
+				
+			</div><!-- /.inputs.clearfix -->
+		</div><!-- /.feedback-content -->
+	</form><!-- /.form_post-feedback.feedback-block -->
+
+	<div class="review feedback-block clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review">
+		<div class="user-info">
+			<div class="avatar">
+				<img src="img/avatars/demo1.jpg" alt="Avatar">
+			</div>
+			<a href="#" class="secondary-link" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Mary H.</span></a>
+		</div><!-- /review-user -->
+		<div class="feedback-content" >
+			<span class="hidden" ></span>
+			<div class="date">
+				<meta itemprop="datePublished" content="2014-03-07T15:16:00">
+				March, 7 15:16
+			</div>
+			<div class="rating-stars" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+				<meta itemprop="ratingValue" content="3">
+				<span class="rating-star"></span>
+				<span class="rating-star"></span>
+				<span class="rating-star"></span>
+				<span class="rating-star"></span>
+				<span class="rating-star"></span>
+			</div><!-- /rating-stars -->
+			<p itemprop="reviewBody">Good quality dress, all seams carefully sewed, threads protrude nowhere, fitted perfectly. I bought German 32, but it's ok US 12. Perfect for the beach, and walking, so and good price!
+			</p>
+		</div><!-- /feedback-content -->
+	</div><!-- /review.feedback-block -->
+	<div class="hidden-blocks">
+		<div class="review feedback-block clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Mary H.</span></a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">
+					<meta itemprop="datePublished" content="2014-03-07T15:16:00">
+					March, 7 15:16
+				</div>
+				<div class="rating-stars" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+					<meta itemprop="ratingValue" content="3">
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+				</div><!-- /rating-stars -->
+				<p itemprop="reviewBody">Good quality dress, all seams carefully sewed, threads protrude nowhere, fitted perfectly. I bought German 32, but it's ok US 12. Perfect for the beach, and walking, so and good price!</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /review.feedback-block -->
+		<div class="review feedback-block clearfix" itemprop="review" itemscope itemtype="http://schema.org/Review">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">Mary H.</span></a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">
+					<meta itemprop="datePublished" content="2014-03-07T15:16:00">
+					March, 7 15:16
+				</div>
+				<div class="rating-stars" itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+					<meta itemprop="ratingValue" content="3">
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+					<span class="rating-star"></span>
+				</div><!-- /rating-stars -->
+				<p itemprop="reviewBody">Good quality dress, all seams carefully sewed, threads protrude nowhere, fitted perfectly. I bought German 32, but it's ok US 12. Perfect for the beach, and walking, so and good price!</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /review.feedback-block -->
+	</div><!-- /hidden-blocks -->
+</div><!-- /tab-target#product-reviews -->
+<div class="tab-target" id="product-questions">
+	<a href="#" class="secondary-link btn-post-feedback">Ask a Question</a>
+	<a href="#" class="secondary-link btn-cancel-feedback">Hide form</a>
+	<!-- to apply styles for authorized user, apply class "authorized" to the form right below -->
+	<form action="#" method="post" class="form_post-feedback feedback-block">
+		<div class="user-info">
+			<div class="avatar">
+				<img src="img/avatars/demo1.jpg" alt="Avatar">
+			</div>
+			<a href="#" class="secondary-link">Mary H.</a>
+		</div><!-- /review-user -->
+		<div class="feedback-content">
+			<textarea name="post-question" id="post-question" cols="30" rows="5" class="textarea-styled"></textarea>
+			<div class="inputs clearfix">
+				<label class="input-wrapper non-authorized-info">
+					<span class="label-text">Name:</span>
+					<input type="text" name="asker-name" id="asker-name" class="textinput">
+				</label>
+				<label class="input-wrapper non-authorized-info">
+					<span class="label-text">e-mail:</span>
+					<input type="text" name="asker-email" id="asker-email" class="textinput">
+				</label>
+				<div class="input-wrapper captcha-wrap">
+					<span class="captcha"><img src="img/captcha.jpg" alt="Picture code"></span>
+					<input type="text" name="question-captcha" id="question-captcha" class="textinput" placeholder="Picture code">
+				</div>
+				<div class="input-wrapper">
+					<button class="btn-submit">Submit</button>
+				</div>
+				
+			</div><!-- /.inputs.clearfix -->
+		</div><!-- /.feedback-content -->
+	</form><!-- /.form_post-review.feedback-block -->
+	<div class="question feedback-block clearfix">
+		<div class="user-info">
+			<div class="avatar">
+				<img src="img/avatars/demo1.jpg" alt="Avatar">
+			</div>
+			<a href="#" class="secondary-link">Mary H.</a>
+		</div><!-- /review-user -->
+		<div class="feedback-content">
+			<div class="date">March, 7 15:16</div>
+			<p>Tell me when your nearest delivery of 40 size dress?</p>
+		</div><!-- /feedback-content -->
+	</div><!-- /question.feedback-block -->
+	<div class="question feedback-block clearfix">
+		<div class="user-info">
+			<div class="avatar">
+				<img src="img/avatars/demo1.jpg" alt="Avatar">
+			</div>
+			<a href="#" class="secondary-link">Mary H.</a>
+		</div><!-- /review-user -->
+		<div class="feedback-content">
+			<div class="date">March, 7 15:16</div>
+			<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+		</div><!-- /feedback-content -->
+	</div><!-- /question.feedback-block -->
+	<div class="hidden-blocks">
+		<div class="question feedback-block clearfix">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link">Mary H.</a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">March, 7 15:16</div>
+				<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /question.feedback-block -->
+		<div class="question feedback-block clearfix">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link">Mary H.</a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">March, 7 15:16</div>
+				<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /question.feedback-block -->
+		<div class="question feedback-block clearfix">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link">Mary H.</a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">March, 7 15:16</div>
+				<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /question.feedback-block -->
+		<div class="question feedback-block clearfix">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link">Mary H.</a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">March, 7 15:16</div>
+				<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /question.feedback-block -->
+		<div class="question feedback-block clearfix">
+			<div class="user-info">
+				<div class="avatar">
+					<img src="img/avatars/demo1.jpg" alt="Avatar">
+				</div>
+				<a href="#" class="secondary-link">Mary H.</a>
+			</div><!-- /review-user -->
+			<div class="feedback-content">
+				<div class="date">March, 7 15:16</div>
+				<p>Hi! Tell me when your nearest delivery of 40 size dress?</p>
+			</div><!-- /feedback-content -->
+		</div><!-- /question.feedback-block -->
+	</div><!-- /hidden-blocks -->
+</div><!-- /tab-target#product-questions -->
+<div class="btn-feedback-toggle">
+	<button class="inner-btn">
+		<span class="more">Show More</span>
+		<span class="hide-blocks">Hide</span>
+	</button>
+</div>

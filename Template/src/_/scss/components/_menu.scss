@@ -1,0 +1,425 @@
+/*------------------------------------------------------------------
+Navigation - Menus
+
+1. Mix style for menu / .main-menu-wrap, .catalog-menu-wrap
+2. Wrapper menu / .main-menu-wrap
+3. Main menu / .main-menu
+4. Side bar - menu / .catalog-menu + .catalog-menu-item + .catalog-menu-lvl1 + .menu-item-lvl1 + .catalog-menu .catalog-menu-lvl2 + .menu-item-lvl2
+5. Account menu / .account-menu
+
+-------------------------------------------------------------------*/
+
+.main-menu-wrap, .catalog-menu-wrap{
+	display: block;
+	position: relative;
+}
+
+.main-menu-wrap{
+	@media (max-width: 767px){
+		padding: 0;
+	}
+}
+
+/* main-menu styling */
+.main-menu{
+	
+	padding: 0;
+	@media (min-width: 768px){
+		margin-top: 30px !important;
+		height: auto !important;
+
+		display: flex !important;
+		justify-content: space-between;
+	}
+
+
+	&>li{
+		margin-bottom: 0 !important;
+		&.line{
+			width: 5%;
+			height: 1px;
+			margin-top: -3px;
+			background-color: #000;
+			&:first-child{
+				margin-right: 20px;
+			}
+			&:last-child{
+				margin-left: 20px;
+			}
+
+			@media only screen and (max-width: 1200px){
+				display: none;
+			}
+		}
+		// position: relative;
+		// ^ submenu wrapper must not be limited by width of its parent menu item.
+		// But if the latter is pos-relative - then submenu IS limited and tries to fit!
+		// for that not to happen, I DON'T use relative here.
+
+		display: inline-block;
+		vertical-align: top;
+
+		margin-bottom: 3px;
+		font-size: 20px;
+
+		&>a{
+			display: block;
+			position: relative;
+			padding: 15px 15px 13px;
+			text-decoration: none;
+
+			&:before {
+
+				content: '';
+				position: absolute;
+				bottom: -5px;
+				left: 0;
+				right: 0;
+				height: 5px;
+				transition: .4s;
+				transform: scaleX(0);
+				opacity: 0;
+			}
+		}
+
+		&:hover>a:before {
+			transform: scaleX(1);
+			opacity: 1;
+		}
+
+		&>a:active:before {
+			transform: scale(2,0);
+			opacity: 0;
+		}
+
+		@media only screen and (max-width: 991px){
+			font-size: 16px;
+		}
+
+		@media only screen and (max-width: 767px){
+			&>a{
+				&:before{
+					display: none;
+				}
+				&:active{
+					padding-top: 15px;
+					padding-bottom: 15px;
+				}
+				text-align: center;
+				padding: 15px 0px;
+				border-bottom: 1px solid #6d6077;
+			}
+		}
+	}/* &>li */
+	
+
+	@media (max-width: 767px){
+		display: none;
+		margin: 0;
+		width: 100%;
+		&:after{
+			display: none;
+		}
+		&>li{
+			&.bullet{ display: none;}
+			display: block;
+			width: 100%;
+
+			position: relative;
+			// now for mobile menu, I need relative.
+			
+		}
+		border-bottom: 3px solid;
+	}
+
+}
+
+.catalog-menu{
+
+	&, ul{
+		padding: 0;
+		list-style: none;
+		width: 100%;
+		&>li {
+			margin-left: 1px;
+			margin-right: 1px;
+		}
+	}
+	
+	.main-page &{
+		@media (max-width: 767px){
+			display: none;
+		}
+	}
+
+	@media (max-width: 767px){
+		display: none;
+	}
+	
+	.expandable{
+
+		position: relative;
+
+		&:after{
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 2px;
+			border-radius: 2px;
+			transition: .4s;
+			transform-origin: 50% 0%;
+			transform: scaleY(0);
+		}
+	}
+	&>.expanded:after{
+		transform: scaleY(1);
+	}
+}
+
+
+.catalog-menu-item{
+	position: relative;
+	display: block;
+	width: 100%;
+	min-height: 38px;
+	line-height: 40px;
+	padding-left: 60px;
+
+	.icon_catalog-woman,.icon_catalog-man,.icon_catalog-kid {height: 38px;display: block;margin-left: 7px;width: 33px;}
+	.icon_catalog-woman {background: url(../img/icons/icon_catalog-woman.png) no-repeat 50% 50%;}
+	.icon_catalog-man {background: url(../img/icons/icon_catalog-man.png) no-repeat 50% 50%;}
+	.icon_catalog-kid {background: url(../img/icons/icon_catalog-kid.png) no-repeat 50% 50%;}
+
+	&:hover{
+		cursor: pointer;
+		&:before {
+
+			transform: scaleX(.2);
+
+			@media (max-width: 991px) {transform: scaleX(.33);}
+		}
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		transform-origin: 0% 50%;
+		transform: scaleX(0);
+		transition: transform .4s;
+		border-radius: 2px;
+	}
+	
+	&:after {
+		content: '';
+		position: absolute;
+		left: 0;
+		width: 20%;
+		top: -2px;
+		height: 2px;
+		transform-origin: 0% 50%;
+		transition: transform .4s;
+		border-radius: 2px;
+		@media (max-width: 991px) {width: 33%;}
+	}
+
+	// additional wrapper for icon needed for creating proper
+	// z-index context and making icon's gradiented border (:before pseudoelement)
+	// appear above actual button. Very tricky and not clear at first sight.
+	.icon-wrapper{
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		z-index: 1; // <-- this is why we need this element
+	}
+	.menu-item-icon{
+		@extend %btn-std; // <-- %btn-std creates :before pseudoelement
+		// used as gradiented border, with z-index: -1 for that purpose
+		// that is why we needed additional wrapper with new z-index context
+		display: block;
+		width: 38px;
+		height: 38px;
+		line-height: 38px;
+		padding-left: 2px; // just for image centering, nothing important
+
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+
+	&>.text{
+		position: relative;
+		font-weight:bold;
+		text-transform: uppercase;
+		font-size: 18px;
+		
+		&:after{ // drawing dropdown arrow
+			content: '';
+			position: absolute;
+			top:8px;
+			right: -20px;
+			border: 4px solid transparent;
+			border-top-color: black;
+		}
+	}
+
+	.expanded &:before{ transform: scaleX(1);}
+
+	.expanded>&{
+		&:after {transform:scaleX(0)}
+		&>.text{
+			color: white;
+			&:after{
+				border-top-color: transparent;
+				border-bottom-color: white;
+				top: 4px;
+			}
+		}
+	}/* .expanded>& */
+
+	@media (max-width: 991px){
+		&>.text{
+			font-size: 14px;
+
+			&:after{
+				right: -15px;
+				top: 5px;
+			}
+		}
+
+		.expanded>&{
+			&>.text:after{
+				border-top-color: transparent;
+				border-bottom-color: black;
+				top: 1px;
+			}
+		}
+	}
+
+	@media (max-width: 767px){
+		&>.text{
+			font-size: 18px;
+		}
+	}
+}/* .catalog-menu-item */
+
+.catalog-menu-lvl1{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	&>li{
+		transition: all 0.3s ease;
+	}
+}
+
+.menu-item-lvl1{
+	display: block;
+	padding-top: 7.5px;
+	padding-bottom: 7.5px;
+	transition: padding-left 0.3s ease;
+	padding-left: 15px;
+
+	&:hover{ cursor: pointer;}
+	
+	&.special{
+		text-transform: uppercase;
+		letter-spacing: $uppercase-letter-spacing;
+		font-weight: bold;
+	}
+
+	&>.text{
+		position: relative;
+		transition: color 0.3s ease;
+		&:after{
+			font-family: "Flaticon";
+			content: "\e002";
+			margin-left: 5px;
+			font-size: 12px;
+		}
+	}
+
+	.expanded > &{
+		@extend %btn-std;
+		&:active{
+			padding-top: 8px;
+			padding-bottom: 7px;
+		}
+		text-align: left;
+		&>.text{
+			&:after{ content: "\e003";}
+		}
+	}
+}/* .menu-item-lvl1 */
+
+.catalog-menu .catalog-menu-lvl2{
+	padding: 0 0 0  30px;
+	margin-bottom: 0px;
+}
+
+.menu-item-lvl2{
+	display: block;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-decoration: none;
+	&:hover{
+		text-decoration: none;
+	}
+}
+
+.account-menu{
+	border-right: 1px solid;
+	padding-bottom: 50px;
+	.avatar{
+		@extend %btn-std;
+		&:active{
+			padding-top: 0;
+		}
+		float: left;
+		margin-right: 10px;
+		width: 66px;
+		height: 68px;
+		text-align: center;
+		line-height: 70px;
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
+	}
+	.name{ font-weight: bold;}
+	.login{ font-size: 13px;}
+	.profile{
+		margin-bottom: 30px;
+		&>a{ border-bottom: 1px solid;}
+	}
+
+	a{
+		transition: 0.4s ease;
+		text-decoration: none;
+		border-bottom: 1px solid;
+		&.active{ 
+			border: none;
+			cursor: default;
+			pointer-events: none;
+		}
+	}
+
+	ul{
+		list-style: none;
+		padding: 0;
+
+		li{ padding: 7px 0;}
+	}
+
+	@media (max-width: 767px){
+		border-right: none;
+		border-bottom: 1px solid;
+		padding-bottom: 20px;
+		margin-bottom: 30px;
+	}
+}/* .account-menu */

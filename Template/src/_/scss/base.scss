@@ -1,0 +1,160 @@
+/*-------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	Apparel
+Version:	1.9
+Changed:	27 January 2016
+-------------------------------------------------------------------*/
+/*-------------------------------------------------------------------
+TABLE OF CONTENTS
+
+- General:
+  - Bootstrap
+  - Fonts
+  - Mixins
+  - Animations
+  - General styles for all pages
+- Navigation:
+	- Breadcrumbs
+	- Navs and tags
+	- Menus
+- Controls:
+	- Buttons
+	- View type switcher
+- Sliders:
+  - noUiSlider
+  - Slick carousel
+  - mCustomScrollbar
+  - Range slider
+- Forms & inputs:
+	- Forms
+	- Inputs
+- Page partials:
+	- Header
+	- Footer
+	- Basket
+	- Catalog
+	- Popups & modals
+	- Tooltips
+	- Stickers
+- Pages styling:
+	- Main page
+	- Catalog page
+	- Product page
+	- Account pages
+	- Order pages
+	- Brands page
+	- Comparison page
+	- Template (static) page
+	- Site map & 404
+-------------------------------------------------------------------*/
+
+/* General ========================================================*/
+	// Bootstrap
+	@import 'bs/bootstrap';
+
+	// Fonts
+	@import 'components/fonts';
+
+	// Mixins
+	@import 'components/mixins';
+
+	// Animations
+	@import 'components/animations';
+
+	// General styles for all pages
+	@import 'components/general';
+/*/General ========================================================*/
+
+/* Navigation =====================================================*/
+	// Breadcrumbs
+	@import 'components/breadcrumbs';
+
+	// Navs and tags
+	@import 'components/nav&tags';
+
+	// Menus
+	@import 'components/menu';
+/*/Navigation =====================================================*/
+
+/* Controls =======================================================*/
+	// Buttons
+	@import 'components/buttons';
+
+	// View type switcher
+	@import 'components/switches';
+/*/Controls =======================================================*/
+
+/* Sliders ========================================================*/
+	// noUiSlider
+	@import 'components/nouislider';
+
+	// Slick carousel
+	@import 'components/slick';
+
+	/* mCustomScrollbar */
+	@import 'components/scrollbar';
+
+	// Range slider
+	@import 'components/range-slider';
+/*/Sliders ========================================================*/
+
+/* Forms & inputs =================================================*/
+	// Forms
+	@import 'components/forms';
+
+	// Inputs
+	@import 'components/inputs';
+/*/Forms & inputs =================================================*/
+
+/* Page partials ==================================================*/
+	// Header
+	@import 'components/header';
+	
+	// Footer
+	@import 'components/footer';
+
+	// Basket
+	@import 'components/basket';
+
+	// Catalog
+	@import 'components/catalog';
+
+	// Popups & modals
+	@import 'components/popups&modals';
+	
+	// Tooltips
+	@import 'components/tooltips';
+
+	// Stickers
+	@import 'components/stickers';
+/*/Page partials ==================================================*/
+
+/* Pages styling ==================================================*/
+	// Main page
+	@import 'components/main-page-base';
+
+	// Catalog page
+	@import 'components/catalog-page';
+
+	// Product page
+	@import 'components/product-page-base';
+
+	// Account pages
+	@import 'components/account-pages';
+
+	// Order pages
+	@import 'components/order-pages';
+
+	// Brands page
+	@import 'components/brands-page';
+
+	// Comparison page
+	@import 'components/comparison.scss';
+
+	// Template (static) page
+	@import 'components/template-page';
+
+	// Site map & 404
+	@import 'components/site-map';
+/*/Pages styling ==================================================*/

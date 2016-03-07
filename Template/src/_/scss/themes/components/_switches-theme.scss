@@ -1,0 +1,19 @@
+.v-type-switch-wrap{
+	.text{
+		color: #434343;
+	}
+}
+
+.view-type-switcher{
+	
+	button{
+
+		background: none;
+
+		&:before {color: $color-main-text;}
+	}
+
+	.box {
+		background: $color-main;
+	}
+}

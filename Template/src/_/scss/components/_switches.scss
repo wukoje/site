@@ -1,0 +1,69 @@
+/*------------------------------------------------------------------
+Controls - View type switcher
+-------------------------------------------------------------------*/
+.v-type-switch-wrap{
+	.text{
+		display: inline-block;
+		vertical-align: middle;
+	}
+	
+}
+
+.view-type-switcher{
+	display: inline-block;
+	vertical-align: middle;
+	position: relative;
+	margin-left: 5px;
+	width: 108px;
+	height: 32px;
+
+	button, .box{
+		width: 36px;
+		height: 32px;
+		
+		&:before{
+			font-family: "Flaticon";
+			font-size: 16px;
+		}
+
+	}
+
+	.btn-blocks{
+		&:before{ content: "\e014";}
+	}
+	.btn-list{
+		&:before{ 
+			content: "\e019";
+		}
+	}
+	.btn-table{
+		&:before{ content: "\e01e";}
+	}
+
+	.box{
+		width: 36px;
+		height: 2px;
+		line-height: 32px;
+		text-align: center;
+		background-color: #fff;
+
+		position: absolute;
+		bottom: 1px;
+		left: 0px;
+
+		transition: left 0.5s;
+
+
+
+		&.v-blocks{
+			left: 0;
+		}
+		&.v-list{
+			left: 36px;
+		}
+		&.v-table{
+			left: 72px;
+		}
+	}
+
+}

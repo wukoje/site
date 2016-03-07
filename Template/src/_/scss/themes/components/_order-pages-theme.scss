@@ -1,0 +1,13 @@
+.order-step3-page .main{
+	p{
+		color: #5a555d;
+	}
+
+	a{
+		&, &:link, &:visited, &:hover, &:active{
+			color: #0077e6;
+			border-bottom-color: fade-out(#0077e6, 0.5);
+			&:hover{ border-bottom-color: transparent;}
+		}
+	}
+}

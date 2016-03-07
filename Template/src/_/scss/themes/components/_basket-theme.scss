@@ -1,0 +1,95 @@
+/*------------------------------------------------------------------
+
+[Table of contents] - Basket theme
+
+1.  / .basket-table
+2.  / .basket-big
+3.  / .basket-popup, .order-details .um_popup-content
+
+-------------------------------------------------------------------*/
+
+.basket-table{
+	color: #000;
+	tbody>tr{ border-color: #bfb9c3;}
+	.short-description{ color: #9f9e9e;}
+	
+	.img-container{ 
+		border-color: #ccc7cf;
+
+		&:hover{
+			border-color: $color-main-dark;
+			.zoom-controls{
+				.text{
+					border-color: transparent;
+					color: $color-main-dark;
+				}
+				&:before{
+					color: $color-main-dark;
+				}
+			}
+		}
+		&:active{
+			.zoom-controls{
+				.text{
+					transition: none;
+					border-color: $color-main-dark;
+				}
+			}/* .zoom-controls */
+		}/* &:active */
+	}/* .img-container */
+
+	.item-name a{
+		&, &:link, &:visited, &:hover, &:active{
+			color: #000;
+			border-bottom-color: fade-out(#000, 0.5);
+			&:hover{ border-bottom-color: transparent;background: none;}
+		}
+	}
+	.out-of-stock-info{
+		.text{ color: red;}
+		button{
+			@extend %silver-normal-state;
+			&:hover{@extend %silver-hover-state;}
+			&:active{@extend %silver-click-state;}
+		}
+	}
+
+	.out-of-stock .price-usd{
+		color: silver !important;
+	}
+}
+
+.basket-big{
+	.price-type-wrapper{ color: #7d787f;}
+	.size-choice, .colors-choice, .discount{
+		.text{ color: #363636;}
+	}
+	tfoot{
+		.label-text{ color: #726c76;}
+	}
+	.price-info{
+		color: #726c76;
+		span{ color: #000;}
+	}
+}
+
+.basket-popup, .order-details .um_popup-content{
+	background: #fff;
+	box-shadow: 0px 1px 3px fade-out(#000, 0.49);
+
+	.table-wrapper{
+		border-color: #bfb9c3;
+	}
+
+	.total-price{
+		color: #726c76;
+		.price-usd{ color: #000;}
+	}
+
+	&:before, &:after{ border-color: transparent;}
+	&.arrow-left:before{ border-right-color: $color-main-dark;}
+	&.arrow-left:after{ border-right-color: #f3f5f4;}
+	&.arrow-top:before{ border-bottom-color: $color-main-dark;}
+	&.arrow-top:after{ border-bottom-color: #f3f5f4;}
+
+}

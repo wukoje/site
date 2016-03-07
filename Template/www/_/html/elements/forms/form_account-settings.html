@@ -1,0 +1,101 @@
+<form action="#" method="post" class="form_account-settings">
+	<label class="input-wrapper">
+		<input type="text" name="nickname" id="nickname" class="textinput">
+		<span class="text">Change Nickname:</span>
+	</label>
+	<label class="input-wrapper">
+		<input type="password" name="password" id="password" class="textinput">
+		<span class="text">Change Password:</span>
+	</label>
+	<label class="input-wrapper">
+		<input type="email" name="settings-email" id="settings-email" class="textinput">
+		<span class="text">Change e-mail:</span>
+	</label>
+	<label class="input-wrapper">
+		<input type="date" name="birthdate" id="birthdate" class="textinput">
+		<span class="text">Birthday:</span>
+	</label>
+	<div class="input-wrapper settings-list">
+		<label for="phone">Phone:</label>
+		<ul class="phone-list">
+			<li class="phone clearfix">
+				<span class="account-phone">1-234-567-89-01</span>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">remove</span></button>
+				</div>
+			</li>
+			<li class="phone clearfix">
+				<span class="account-phone">1-234-567-89-01</span>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">remove</span></button>
+				</div>
+			</li>
+		</ul>
+		<input type="tel" name="phone" id="phone" class="textinput short">
+		<button class="btn-plus">+</button>
+	</div>
+	
+	<div class="input-wrapper settings-list">
+		<label for="delivery-address">Shipping address:</label>
+		<ul class="address-list">
+			<li class="address clearfix">
+				<span class="address">1205 Boulvard avenue, Los Angeles, CA</span>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">remove</span></button>
+				</div>
+			</li>
+			<li class="address clearfix">
+				<span class="address">513, Central street, Los Angeles, CA</span>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">remove</span></button>
+				</div>
+			</li>
+		</ul>
+		<input type="text" name="delivery-address" id="delivery-address" class="textinput short">
+		<button class="btn-plus">+</button>
+	</div>
+	
+	<div class="input-wrapper avatar clearfix">
+		<label for="avatar">Your photo:</label>
+		<div class="img-container">
+			<img src="img/avatars/avatar.png" alt="User photo (avatar)" title="User photo (avatar)">
+		</div>
+		<div class="fileinput-styled">
+			<label for="avatar" class="btn-fileinput"><span class="btn-text">Select file</span></label>
+			<input type="file" name="avatar" id="avatar"><br>
+			<span id="chosen-file">*File is not selected</span>
+			<div class="item-actions">
+				<button class="action-delete"><span class="btn-text">remove</span></button>
+			</div>
+		</div>
+	</div>
+	<div class="input-wrapper social-wrap">
+		<label>Social networks accounts:</label>
+		<ul class="social-list">
+			<li>
+				<a href="#" class="social vk sprite"><span class="icon-container sprite"></span></a>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">unlink</span></button>
+				</div>
+			</li>
+			<li>
+				<a href="#" class="social ok sprite"><span class="icon-container sprite"></span></a>
+				<div class="item-actions">
+					<button class="action-delete"><span class="btn-text">unlink</span></button>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="input-wrapper social-wrap">
+		<label>Link social account:</label>
+		<ul class="social-list all-socials">
+			<li><a href="#" class="social tw"><span class="icon-container sprite"></span></a></li>
+			<li><a href="#" class="social vk"><span class="icon-container sprite"></span></a></li>
+			<li><a href="#" class="social ok"><span class="icon-container sprite"></span></a></li>
+			<li><a href="#" class="social fb"><span class="icon-container sprite"></span></a></li>
+			<li><a href="#" class="social ya"><span class="icon-container sprite"></span></a></li>	
+		</ul>
+	</div>
+
+	<button class="btn-submit"><span class="btn-text">Save</span></button>
+</form>

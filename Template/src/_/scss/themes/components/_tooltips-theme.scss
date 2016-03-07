@@ -1,0 +1,56 @@
+/*------------------------------------------------------------------
+
+[Table of contents]
+
+1.  / .tooltip
+2.  / .tooltip-inner
+3.  / .tooltip-arrow
+
+-------------------------------------------------------------------*/
+
+.tooltip{
+	&.in{ opacity: 1;}
+}
+.tooltip-inner{
+	color: #76687f;
+	.flat & {color: $color-btn-text}
+	@extend %silver-normal-state;
+	opacity: 1;
+}
+.tooltip-arrow{
+	.tooltip.top &{
+		border-top-color: #cecae8;
+		.flat & {border-top-color:$color-main-light;}
+		&:after{
+			border-top-color: #f3f5f4;
+			.flat & {border-top-color: $color-main-light;}
+		}
+	}
+
+	.tooltip.bottom &{
+		border-bottom-color: #cecae8;
+		.flat & {border-bottom-color:$color-main-light;}
+		&:after{
+			border-bottom-color: #f3f5f4;
+			.flat & {border-bottom-color: $color-main-light;}
+		}
+	}
+
+	.tooltip.left &{
+		border-left-color: #cecae8;
+		.flat & {border-left-color:$color-main-light;}
+		&:after{
+			border-left-color: #f3f5f4;
+			.flat & {border-left-color: $color-main-light;}
+		}
+	}
+
+	.tooltip.right &{
+		border-right-color: #cecae8;
+		.flat & {border-right-color: $color-main-light;}
+		&:after{
+			border-right-color: #f3f5f4;
+			.flat & {border-right-color: $color-main-light;}
+		}
+	}
+}/* .tooltip-arrow */

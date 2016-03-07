@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------
+Pages styling - Template page
+-------------------------------------------------------------------*/
+
+.template-page{
+	h2{
+
+		margin-top: 35px;
+		font-size: 24px;
+		margin-bottom: 30px;
+	}
+	h3{
+
+		font-size: 18px;
+		font-weight: bold;
+		margin-top: 50px;
+		margin-bottom: 15px;
+	}
+	h4{
+
+		font-size: 14px;
+		font-weight: bold;
+		margin-top: 40px;
+		margin-bottom: 15px;
+	}
+
+	.banner{
+
+		img{ max-width: 100%;}
+
+		margin-bottom: 30px;
+	}
+
+	p{
+
+		margin-bottom: 15px;
+		margin-top: 15px;
+	}
+}

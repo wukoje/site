@@ -1,0 +1,122 @@
+/*------------------------------------------------------------------
+Pages styling - Account pages
+
+1. .account-page
+2. .favorite-item
+3. .account-order-history
+
+-------------------------------------------------------------------*/
+
+
+.account-page{
+	.breadcrumbs{
+		margin-bottom: 30px;
+
+		@media (max-width: 767px){
+			margin-top: 15px;
+		}
+	}
+	h2{
+		font-weight:bold;
+		text-transform: uppercase;
+		font-size: 24px;
+		margin-top: 0;
+		margin-bottom: 30px;
+	}
+}
+
+.favorite-item{
+	position: relative;
+	display: inline-block;
+	vertical-align: top;
+	line-height: normal;
+	text-align: center;
+	margin-bottom: 30px;
+	.btn-item-action.delete { right: 15px;}
+	// max-width: 24%;
+	// margin-right: 1%;
+	
+	.img-container{
+		display: block;
+		width: 100%;
+		position: relative;
+		&:after{
+			transition: 0.3s;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background: transparent;
+		}
+		&:hover{
+			cursor: pointer;
+			&:after{
+				background: fade-out(#000, 0.8);
+			}
+		}
+		img{
+			max-width: 100%;
+		}
+	}
+
+	
+	h4{
+		margin-bottom: 5px;
+		&>a{
+			@extend %reset-link;
+			transition: 0.3s;
+			font-weight:bold;
+			text-transform: uppercase;
+			letter-spacing: $uppercase-letter-spacing;
+			font-size: 18px;
+			font-weight: normal;
+			border-bottom: 1px solid;
+			line-height: 25px;
+		}
+	}
+	p{
+		font-size: 12px;
+		margin-bottom: 0;
+	}
+
+	@media (max-width: 767px){
+		max-width: 48%;
+		margin-right: 2%;
+
+		&:nth-child(2n){
+			margin-right: 0;
+		}
+	}
+}/* /favorite-item */
+
+.account-order-history{
+	border-bottom: 1px solid;
+	width: 100%;
+	tr{
+		transition: 0.3s;
+	}
+	th{ 
+		font-size: 12px;
+		padding: 5px 0;
+		text-align: center;
+		border-bottom: 1px solid;		
+	}
+
+	td{
+		padding: 20px 0;
+		text-align: center;
+		font-size: 14px;
+	}
+	.order-date{ width: 14%;}
+	.order-number{
+		width: 36%;
+		&>a{
+			text-decoration: none;
+			border-bottom: 1px dotted;
+		}/* a */
+	}/* .order-number */
+	.order-price{ width: 23.5%;}
+	.order-status{ width: 26.5%;}
+}/* .order-history */

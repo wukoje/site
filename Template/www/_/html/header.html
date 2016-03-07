@@ -1,0 +1,193 @@
+<div class="header-content">
+	<div class="top-line" id="top-line">
+		<div class="container">
+			<div class="row text-right">
+				<button class="btn-sitemenu-toggle btn-toggle visible-xs"><span class="glyphicon glyphicon-align-justify"></span></button>
+
+				<div class="mobile-menu">
+					<a href="#" class="btn-city-select pull-left um_popup-switch col-xs-12" data-popup-container=".city-link">Los Angeles</a>
+					<a href="#" class="btn-account login col-xs-6" data-toggle="modal" data-target="#modal_login">Login</a>
+					<a href="#" class="btn-account reg col-xs-6" data-toggle="modal" data-target="#modal_registration"><span class="btn-text">Registration</span></a>
+					<a href="template-page.php" class="btn-about col-xs-12">About us</a>
+					<a href="template-page.php" class="btn-how-to-buy col-xs-12">How to buy</a>
+					<a href="template-page.php" class="btn-delivery active col-xs-12">Shipping and payment</a>
+					<a href="template-page.php" class="btn-warranty col-xs-12">Guarantee</a>
+				</div>
+				
+				<div class="header-buttons pull-left">
+					<div class="header-btn">
+						<div class="info-icon btn-text">i</div>
+						<div class="header-links">
+							<a href="template-page.php" class="btn-about flaticon-shopping63">About us</a>
+							<a href="template-page.php" class="btn-how-to-buy flaticon-wallet">How to buy</a>
+							<a href="template-page.php" class="btn-delivery active flaticon-small59">Shipping and payment</a>
+							<a href="template-page.php" class="btn-warranty flaticon-checked10">Guarantee</a>
+						</div>
+					</div><!-- .header-btn -->
+					<div class="header-btn">
+						<div class="flaticon-user12 btn-logreg btn-text"></div>
+						<div class="header-links">
+							<a href="#" class="btn-account login" data-toggle="modal" data-target="#modal_login">Login</a>
+							<a href="#" class="btn-account reg" data-toggle="modal" data-target="#modal_registration"><span class="btn-text">Registration</span></a>
+						</div>
+					</div><!-- .header-btn -->
+					<div class="header-btn">
+						<span class="btn-city-select btn-text um_popup-switch" data-popup-container=".city-link"
+							title="Change city" data-toggle="tooltip" data-placement="bottom">Los Angeles</span>
+						<div class="city-link">
+							<div class="city-select-panel apparel-popup um_popup-content">
+								<button class="btn-closebtn btn-city-close um_popup-switch"
+								data-popup-container=".city-link"><span class="btn-text"></span></button>
+								<h3>Choose your city</h3>
+								<form action="#" method="post" class="form_city-name">
+									<label>
+										<strong class="label-text">or just type a city name:</strong>
+										<input type="text" class="textinput city-name">
+									</label>
+								</form>
+								<p>Your city: <span class="current-city">Los Angeles</span></p>
+								<ul>
+									<li><span>New York</span> </li>
+									<li><span>Washington, DC</span></li>
+									<li class="active"><span>Los Angeles</span></li>
+									<li><span>Boston</span></li>
+									<li><span>Portland</span></li>
+									<li><span>Chicago</span></li>
+									<li><span>Phoenix</span></li>
+									<li><span>San Diego</span></li>
+									<li><span>Dallas</span></li>
+									<li><span>Austin</span></li>
+									<li><span>Denver</span></li>
+									<li><span>Memphis</span></li>
+									<li><span>Nashville</span></li>
+									<li><span>Las Vegas</span></li>
+									<li><span>Houston</span></li>
+									<li><span>Baltimore</span></li>
+									<li><span>Louisville</span></li>
+									<li><span>Philadelphia</span></li>
+									<li><span>Dallas</span></li>
+									<li><span>Indianapolis</span></li>
+									<!-- ^ It's important! There is should be no one space between closing bracket 
+									of previous tag and opening bracket of current tag -->
+								</ul>
+								<hr>
+								<button class="btn-close-modal btn-city-close um_popup-switch"
+								data-popup-container=".city-link"><span class="btn-text">It's my city</span></button>
+							</div><!-- .city-select-panel.apparel-popup -->
+						</div><!-- .city-link -->
+					</div><!-- .header-btn -->
+				</div><!-- .header-buttons.pull-left -->
+
+				<div class="header-buttons pull-right">
+					<a href="account-favorites.php" class="btn-favorites header-btn" title="Go to favorites" data-toggle="tooltip" data-placement="bottom"><span class="quan">6</span></a>
+					<a href="compare.php" class="btn-compare header-btn" title="Go to compare page" data-toggle="tooltip" data-placement="bottom"><span class="quan">83</span></a>
+					<div class="header-btn">
+						<div class="basket-toggle-btn btn-text um_popup-switch"
+							data-popup-container="#basket-container"
+							data-popup-animation="class"
+							title="Open basket" data-toggle="tooltip" data-placement="bottom"><span class="quan">3</span></div>
+						<div class="basket-container" id="basket-container">
+							<div id="basket-popup" class="basket-popup um_popup-content">
+								<div class="table-wrapper">
+									<?php include '_/html/elements/basket-popup-demo.html'; ?>
+								</div>
+								<span class="total-price">Total: <span class="price-usd">$225 </span></span>
+								<a href="order-step1.php" class="btn-buy medium"><span class="btn-text">Add to cart</span></a>
+							</div>
+						</div>
+					</div><!-- .header-btn -->
+					<div class="header-btn search-wrap">
+						<button class="btn-search-toggle"></button>
+						<form action="#" method="post" id="form-search-mobile" class="">
+							<div class="input-wrapper">
+								<input type="text" class="textinput" placeholder="We have over 2 million products...">
+							</div>
+							<?php include '_/html/elements/popup_ajax-search.html'; ?>
+						</form>
+					</div><!-- .header-btn -->
+				</div><!-- .header-buttons.pull-right -->
+				
+				<div class="header-logo-wrap">
+					<a href="main.php" class="main-logo">
+						<span class="img">Apparel</span>
+						<!-- <img src="img/logo.png" alt="Логотип компании" class='img'> -->
+					</a>
+				</div>
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div><!-- /top-line -->
+	<div class="top-line-helper"></div>
+
+
+</div><!-- /header-content -->
+
+<!-- Color scheme chooser. Commented because of ThemeForest requirement. -->
+<!-- <div class="settings-wrap apparel-popup">
+	<button class="btn-settings-toggle um_popup-switch"
+	data-popup-container=".settings-wrap"
+	data-popup-animation="class"></button>
+	<div class="um_popup-content" id="settings-panel">
+		<h3>Configuration panel</h3>
+		<p>Select color scheme:</p>
+		<ul>
+			<li class="theme-demo flat_blue" data-theme='flat_lightblue'>
+			<div></div><span class="text">LightBlue</span>
+			</li><li class="theme-demo flat_cyan" data-theme='flat_cyan'>
+			<div></div><span class="text">Cyan</span>
+			</li><li class="theme-demo flat_purple" data-theme='flat_purple'>
+			<div></div><span class="text">Purple</span>
+			</li><li class="theme-demo flat_red" data-theme='flat_red'>
+			<div></div><span class="text">Red</span>
+			</li><li class="theme-demo flat_yellow" data-theme='flat_yellow'>
+			<div></div><span class="text">Yellow</span></li>
+		</ul>
+		<hr>
+		<button class="settings-close btn-close-modal um_popup-switch"
+		data-popup-container=".settings-wrap"
+		data-popup-animation="class"><span class="btn-text">Save</span></button>
+	</div>
+</div> -->
+
+	
+
+
+
+<!-- modals and popups -->
+<div class="modal fade modal-form" id="modal_login" tabindex="-1">
+	<div class="modal-dialog">
+		<button class="btn-closebtn" data-toggle="modal" data-target="#modal_login"><span class="btn-text"></span></button>
+		<?php include '_/html/elements/forms/form_login.html'; ?>
+	</div>
+</div>
+
+<div class="modal fade modal-form" id="modal_registration" tabindex="-1">
+	<div class="modal-dialog">
+		<button class="btn-closebtn" data-toggle="modal" data-target="#modal_registration"><span class="btn-text"></span></button>
+		<?php include '_/html/elements/forms/form_registration.html'; ?>
+	</div>
+</div>
+
+<div class="modal" id="success-modal" tabindex="-1" role="dialog" aria-labelledby="success-modal" aria-hidden="true">
+		<div class="form-success">
+			<button class="btn-closebtn" data-toggle="modal" data-target="#success-modal"><span class="btn-text"></span></button>
+			<span class="flaticon-accept3"></span>
+			<span class="text">Registration is successful!</span>
+		</div>
+</div>
+<div class="modal" id="fail-modal" tabindex="-1" role="dialog" aria-labelledby="fail-modal" aria-hidden="true">
+		<div class="form-fail">
+			<button class="btn-closebtn" data-toggle="modal" data-target="#fail-modal"><span class="btn-text"></span></button>
+			<span class="flaticon-cancel1"></span>
+			<span class="text">Warning! Here is error!</span>
+		</div>
+</div>
+
+<div class="added2basket">
+	<span>Added</span> <span>to cart</span>
+</div>
+<div class="popup-on-buy no-size">
+	Please select a size
+</div>
+<div class="popup-on-buy no-color">
+	Please select a color
+</div>

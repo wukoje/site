@@ -1,0 +1,858 @@
+/*------------------------------------------------------------------
+Controls - Buttons
+
+1. Styles for the page user interface / .UI-element
+2. Control button item in the shopping cart / .btn-item-action
+3. Styles for rating panel / .rating-stars + .rating-star
+4. Button the settings panel / .btn-settings-toggle
+5. Button for opening feedbacks / .btn-feedback-toggle
+6. Button to buy in different versions / .btn-buy + .btn-buy2
+7. Add button with plus / .btn-plus
+8. Сlose button of a modal window / .btn-closebtn
+9. Arrow pagination / %pg-arrow + .btn-arrow
+10. Сontrol buttons slider / .slider-controls
+11. Toolbar alphabet / .btn-alphabet
+12. Button subscription form / .subscribe-form
+13. Submit buuton / .btn-submit
+14. Control buttons a modal window view photo gallery / .btn-modal-control
+15. Disabled button / .disabled
+16. Button to open sitemenu (mobile) / .btn-sitemenu-toggle
+17. Button to open search form / .btn-search-toggle
+18. Button to open main menu (mobile) / .btn-mainmenu-toggle
+19. Button open/close unit / .btn-expand
+20. Styles of different versions of buttons / Buttons.btn-buy.main-buy-btn, .btn-buy.small, .btn-buy.medium
+
+-------------------------------------------------------------------*/
+
+.UI-element{
+	display: inline-block;
+	vertical-align: top;
+	margin: 10px 5px;
+
+	.slider &{
+		width: 50%;
+	}
+}
+
+.btn-item-action{
+	margin-bottom: 5px;
+
+	font-size: 14px;
+	padding-left: 30px;
+	.basket-small &{
+		font-size: 12px;
+		padding-left: 20px;
+		text-align: left;
+	}
+
+	.btn-text, &:after{
+		transition: .4s;
+		position: relative;
+		border-bottom: 1px dotted;
+	}
+	.btn-text:before{
+		font-family: "Flaticon";
+		position: absolute;
+		left: -20px;
+		font-size: 20px;
+
+		.basket-small &{
+			font-size: 18px;
+		}
+	}
+
+	&.delete{
+		.btn-text:before{
+			content: "\e031";
+			left: -30px;
+			top: -8px;
+			font-size: 22px;
+			.basket-small &{
+				font-size: 17px;
+				left: -25px;
+				top: -3px;
+			}
+		}
+
+		.favorite-item &{
+			position: absolute;
+			height: 30px;
+			width: 30px;
+			margin-bottom: 0;
+			top: 0px;
+			right: 0;
+
+			.btn-text{
+				&:before{
+					font-size: 18px;
+					top: -12px;
+					left: -28px;
+				}
+			}
+
+			transition: .4s ease;
+		}
+	}
+
+	&.waitlist{
+		$w: 20px;
+		position: relative;
+		padding: 0;
+		margin-left: $w;
+		&:before{
+			position: absolute;
+			content: "\e016";
+			left: -$w;
+			top: -4px;
+			
+			font-size: 17px;
+			font-family: "Flaticon";
+		}
+
+		.basket-small &:before{
+			font-size: 15px;
+			top: -1px;
+		}
+
+		&:after{
+			content: attr(title);
+		}
+	}
+}/* .btn-item-action */
+
+.rating-stars{
+	.product-info &, .compare-item &{
+		@extend %btn-std;
+		text-align: center;	
+		
+		padding: 3px 0px;
+		margin-bottom: 3px;
+	}
+	
+	.feedback-content &{
+		margin-top: 5px;
+		margin-bottom: 5px;
+	}
+
+}
+.rating-star{
+	transition: color 0.3s ease;
+	display: inline-block;
+	position: relative;
+	width: 15px;
+
+	&:before{
+		font-family: "Flaticon";
+		content: "\e02e";
+		position: absolute;
+		left: -5px;
+		top: -20px;
+		font-size: 22px;
+	}
+	&:hover{
+		cursor: pointer;
+	}
+}
+
+@-webkit-keyframes rotation {
+0% {transform:rotate(0deg);}
+100% {transform:rotate(360deg);}
+}
+@-moz-keyframes rotation {
+0% {transform:rotate(0deg);}
+100% {transform:rotate(360deg);}
+}
+@-o-keyframes rotation {
+0% {transform:rotate(0deg);}
+100% {transform:rotate(360deg);}
+}
+@keyframes rotation {
+0% {transform-origin: 50% 50% 0px;
+transform:rotate(0deg);}
+100% {transform-origin: 50% 50% 0px;
+transform:rotate(360deg);}
+}
+
+.btn-settings-toggle{
+	@extend %btn-std;
+	.um_container-opened &:active{
+		&:after{
+			line-height: 44px;
+		}
+	}
+	position: absolute;
+	transform: translateZ(0);
+	z-index: 2;
+	left: 100%;
+	top: 0;
+	&:before{
+		display: none;
+	}
+	padding: 0;
+	&:active{
+		padding: 0;
+	}
+	&:after{
+		content: '';
+		transform: translateZ(0);
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		left: 0;
+		height: 44px;
+		width: 44px;
+		background: url('../img/icons/icon_settings.png') no-repeat center center;
+		font-family: "Flaticon";
+		// content: "\e00d";
+		
+		.um_container-opened &{
+			background: none;
+			content: "\e023";
+			font-size: 44px;
+			line-height: 44px;
+		}
+	}
+
+	&:hover:after{
+		-webkit-animation-name: rotation;
+		-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: infinite;
+		-webkit-animation-timing-function: linear;
+		-moz-animation-name: rotation;
+		-moz-animation-duration: 5s;
+		-moz-animation-iteration-count: infinite;
+		-moz-animation-timing-function: linear;
+		-o-animation-name: rotation;
+		-o-animation-duration: 5s;
+		-o-animation-iteration-count: infinite;
+		-o-animation-timing-function: linear;
+		animation-name: rotation;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+	}
+	.um_container-opened &:hover:after{
+		-webkit-animation: none;
+		-moz-animation: none;
+		-o-animation: none;
+		animation-name: none;
+	}
+
+	
+	height: 44px;
+	line-height: 44px;
+	width: 44px;
+	
+	text-align: center;
+	font-size: 40px;
+}/* .btn-settings-toggle */
+
+.btn-feedback-toggle{
+	position: relative;
+	width: 100%;
+	text-align: center;
+
+	font-size: 16px;
+
+	border-bottom: 1px solid;
+	margin-bottom: 50px;
+	&:before {
+		position: absolute;
+		content: '';
+		height: 100%;
+		left: 0;
+		right: 0;
+		bottom: -100%;
+		z-index: 1;
+	}
+
+	.inner-btn{
+		padding: 6px 10px;
+		position: relative;
+		z-index: 2;
+		height: 30px;
+		bottom: -1px;
+		transition: .4s;
+
+		&:before {
+
+			content: '';
+			position: absolute;
+			bottom: 0px;	
+			left: 0;
+			right: 0;
+			height: 1px;
+			opacity: 1;
+			transform: scale(1);
+			z-index: 8;
+		}
+
+		&:after {
+
+			content: '';
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			height: 1px;
+			bottom: 0;
+			border-left: 1px solid;
+			border-right: 1px solid;
+			z-index: 9;
+			transition: .4s;
+		}
+
+	}
+	&:hover {
+
+		cursor: pointer;
+
+		.inner-btn{
+			transform: translateY(15px);
+			&:after {
+				height: 16px;
+			}
+		}
+	
+	}
+
+	.more {
+		position: relative;
+		top: -4px;
+	}
+	
+	
+	.hide-blocks{display: none;}
+	&.shown{
+		.more{ display: none;}
+		.hide-blocks{ 
+			display: inline-block;
+		}
+		.inner-btn:before {transform: scale(1);opacity: 1;}
+		
+		.inner-btn {
+
+			bottom: -30px;
+
+			&:before {top: 0px;bottom: auto;}
+			&:after {top: 0px;bottom: auto;}
+
+		}
+		&:hover .inner-btn{
+			
+			cursor: pointer;
+			transform: translateY(-15px);
+
+			&:after {
+				height: 16px;
+			}
+		}
+
+	}
+}
+
+
+.btn-buy{
+	display: inline-block;
+	@extend %reset-link;
+	@extend %btn-std;
+	
+	height: 48px;
+	line-height: 48px;
+	
+	.btn-text {
+
+		position: relative;	
+		top: -6px;
+		font-size: 22px;
+	}
+
+	.btn-text:before{
+
+		font-family: "Flaticon";
+		content: "\e027";
+		font-size: 40px;
+		position: relative;
+		top: 6px;
+		margin-right: 4px;
+
+	}
+	
+	&.busy .btn-text:before{
+		display: none;
+	}
+	
+	&.large{
+		padding: 2px;
+		vertical-align: middle;
+		width: 155px;
+		height: 53px;
+		line-height: 50px;
+		border-radius: 2px;
+		text-transform: uppercase;
+		letter-spacing: $uppercase-letter-spacing;
+		font-size: 24px;
+		font-weight: bold;
+		.btn-text:after{ display: none;}
+		.btn-text:before{ display: none !important;}
+		&:active{
+			padding-top: 3px;
+			
+		}
+		.btn-text{
+			top: auto;
+		}
+
+		&+span{
+			display: inline-block;
+			margin-left: 1px;
+			text-align: center;
+			border: 3px solid;
+			height: 55px;
+			line-height: 51px;
+			width: 110px;
+			vertical-align: middle;
+			font-size: 22px;
+			font-weight: bold;
+
+			&:after{
+				font-weight: normal;
+			}
+		}
+
+		@media (max-width: 1200px){
+			width: 120px;
+			height: 48px;
+			line-height: 44px;
+			&, .btn-text{ font-size: 20px;}
+			&+span{
+				width: 90px;
+				height: 50px;
+				line-height: 46px;
+				font-size: 18px;
+			}
+		}
+
+		@media (max-width: 991px){
+			width: 95px;
+			height: 40px;
+			font-size: 16px;
+			&, .btn-text{font-size: 16px;}
+			line-height: 38px;
+			&+span{
+				width: 68px;
+				height: 42px;
+				line-height: 38px;
+				font-size: 15px;
+			}
+		}
+	}/* &.large */
+}/* .btn-buy */
+
+.btn-buy2 {
+
+	display: inline-block;
+
+	&:before{
+
+		font-family: "Flaticon";
+		content: "\e027";
+		font-size: 32px !important;
+		position: relative;
+		top: 2px;
+		right: 4px;
+
+	}
+}
+
+
+.btn-plus{
+	@extend %btn-std;
+
+	width: 29px;
+	height: 29px;
+	font-size: 30px;
+	line-height: 30px;
+}
+
+.btn-closebtn{
+	position: relative;
+	width: 17px;
+	height: 17px;
+	background: none;
+	.btn-text:before{
+		font-family: "Flaticon";
+		content: "\e023";
+
+		position: absolute;
+		top: -16px;
+		left: -10px;
+		font-size: 34px;
+	}
+}
+
+// pg = pagination
+%pg-arrow{
+	.btn-text:before{
+		font-family: "Flaticon";
+	}
+
+	&.left > .btn-text:before{ 
+		content: "\e001";
+	}
+	&.right > .btn-text:before{
+		content: "\e025";
+	}
+}
+
+.btn-arrow{
+	@extend %btn-std;
+	@extend %pg-arrow;
+	display: inline-block;
+	&, &:link, &:visited, &:hover, &:active{
+		text-decoration: none;
+		outline: none;
+	}
+	&:active{
+		padding-top: 0;
+		.btn-text:before{
+			position: relative;
+			top: 1px;
+		}
+	}
+	width: 30px;
+	height: 30px;
+	.btn-text:before{
+		position: relative;
+		top: 2px;
+		font-size: 20px;
+		line-height: 35px;
+	}
+
+	&.left > .btn-text:before{ 
+		margin-right: -25px;
+	}
+	&.right > .btn-text:before{
+		margin-left: -27px;
+	}
+}
+
+.slider-controls{
+	@extend %reset-ul;
+	li{
+		border-radius: 50%;
+		margin-left: 10px !important;
+		margin-right: 0 !important;
+		width: 10px;
+		height: 10px;
+
+		&:first-child{ margin-left: 0 !important;}
+	}
+
+}
+
+.btn-alphabet{
+	@extend %btn-std;
+	width: 33px;
+	height: 33px;
+	line-height: 35px;
+	font-size: 18px;
+	font-weight: bold;
+	vertical-align: middle;
+
+	&.active{
+		@extend .disabled;
+	}
+	
+	&.small{
+		font-size: 14px;
+		width: 36px;
+	}
+}
+
+.subscribe-form{
+	@media (max-width: 767px){
+		.form-control{
+			height: 36px;
+		}
+	}
+	@media (min-width: 992px){
+		width: 80%;
+	}
+}
+.btn-subscribe{
+	outline: none !important;
+	&:before{
+		font-size: 16px;
+		top: auto;right: auto;bottom: auto;left: auto;
+	}
+}
+
+
+.btn-submit{
+	@extend %btn-std;
+	&:before{
+		border-radius: 4px;
+	}
+
+	margin-top: 15px;
+	border-radius: 4px;
+	display: block;
+	width: 100%;
+	height: 43px;
+	
+	.btn-text{
+		font-size: 18px;
+		font-weight: bold;
+	}
+}
+
+.btn-modal-control{
+	position: absolute;
+	z-index: 1001;
+	transition: .4s;
+	
+	&:after{
+		font-family: "Flaticon";
+		font-size: 18px;
+	}
+	
+	&:active{
+		transition: none;
+		padding-top: 0;
+	}
+
+	
+	&.next, &.prev{
+		width: 44px;
+		height: 44px;
+		top: 0;
+		bottom: 120px;
+		margin: auto;
+		
+		text-align: center;
+
+		@media (max-width: 767px){
+			bottom: 0;
+		}
+
+		&.disabled{ display: none;}
+	}
+	&.next{
+		right: -5px;
+		&:after{
+			margin-left: 3px;
+			content: "\e025";
+		}
+
+		@media (max-width: 767px){
+			right: 0;
+		}
+	}
+	&.prev{	
+		left: -5px;
+
+		&:after{
+			margin-left: -3px;
+			content: "\e001";
+		}
+
+		@media (max-width: 767px){
+			left: 0;
+		}
+	}
+
+	&.btn-closebtn{
+		top: 0;
+		right: 0;
+
+		@media (max-width: 767px){
+			.btn-text:before{
+				font-size: 50px;
+				top: -22px;
+				left: -24px;
+			}
+		}
+	}
+}
+
+.disabled{
+	/* forcing disabled element to not respond visually to hover and clicks (in addition to color styles and JS stops) */
+	cursor: default;
+	pointer-events: none;
+}
+
+.btn-sitemenu-toggle, .btn-search-toggle{
+	position: relative;
+	vertical-align: top;
+	z-index: 2;
+	height: 40px;
+	min-width: 50px;
+	overflow: hidden;
+	top: 0;
+	transition: color .4s;
+}
+
+.btn-sitemenu-toggle{
+	left: 0;
+
+	span.glyphicon{
+		position: absolute;
+		top: 10px;right: 0;left: 0;
+		margin: auto;
+		font-size: 18px;
+	}
+}
+
+.btn-search-toggle{
+	&:before{
+		position: relative;
+		top: -1px;
+		text-align: center;
+		font-family: "Flaticon";
+		font-size: 38px;
+		height: 40px;
+		line-height: 40px;
+		content: "\e00e";
+	}
+	@media(max-width: 767px) {right: 0;}
+	// z-index: 10;
+	// left: 0;
+}
+
+.btn-mainmenu-toggle{
+	display: none;
+	@extend %btn-std;
+
+	@media (max-width: 767px){
+
+		display: block;
+		width: 100%;
+		height: 50px;
+
+		text-transform: uppercase;
+		letter-spacing: $uppercase-letter-spacing;
+
+		.btn-text{
+			position: relative;
+			font-weight:bold;
+			text-transform: uppercase;
+			letter-spacing: $uppercase-letter-spacing;
+			font-size: 20px;
+			line-height: 53px;
+
+			&:after{
+				content: '';
+				position: absolute;
+				top: 8px;
+				right: -20px;
+				border: 5px solid transparent;
+				border-top-color: #282828;
+			}
+		}
+		&.menu-opened>.btn-text:after{
+			border-color: transparent;
+			border-bottom-color: #282828;
+			top: 3px;
+		}
+	}
+}
+
+
+.btn-expand{
+	@extend %btn-std;
+	&:hover{ cursor: pointer;}
+	user-select: none;
+	
+	// width, height and line-heights are subject to change
+	width: 16px;
+	height: 16px;
+	position: relative;
+	&:after{
+		font-weight: normal;
+		line-height: 16px;
+		position: relative;
+	    top: -1px;
+		content: '+';
+	}
+
+	.expanded &:after, &.expanded:after{
+		content: '';
+		position: absolute;
+
+		top: 7px;
+		height: 2px;
+		left: 5px;
+		right: 5px;
+		background-color: black;
+	}
+}
+
+.btn-buy.main-buy-btn, .btn-buy.small, .btn-buy.medium{
+	padding: 10px 25px;
+	height: auto;
+	line-height: normal;
+
+	border: 3px solid;
+
+	font-weight: bold;
+	.btn-text{
+		position: relative;
+		top: auto;
+		z-index: 1;	
+	}
+	.btn-text:before{
+		display: none;
+	}
+
+	&:active{
+		transition: none;
+	}
+
+	position: relative;
+	&:before{
+		transition: transform .2s;
+		content: '';
+		position: absolute;
+		z-index: 0;
+		top: 0;right: 0;bottom: 0;left: 0;
+		transform: scaleX(0);
+	}
+	&:hover{
+		&:before{
+			transform: scaleX(1);
+		}
+	}
+}
+
+.btn-buy.small{
+	padding: 5px;
+	width: 60px;
+	&:after{
+		position: relative;
+		z-index: 1;
+		content: attr(title);
+		font-size: 15px;
+	}
+}
+
+.btn-buy.medium{
+	padding: 7px 10px;
+}
+
+.btn-buy.main-buy-btn{
+	padding: 0 25px;
+	height: 60px;
+	line-height: 54px;
+	&:before{
+		z-index: 1;
+	}
+	.btn-text{
+		z-index: 2;
+	}
+	&:after{
+		position: absolute;
+		content: '';
+		z-index: 0;
+		top: 0;right: 0;bottom: 0;left: 0;
+	}
+}

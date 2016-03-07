@@ -1,0 +1,496 @@
+/*------------------------------------------------------------------
+Page partials - Basket
+
+1. Common styles for baskets / .basket-table
+2. Big table on the order page / .basket-big
+3. The cart in the header / .basket-small
+4. The conteiner for the small basket / .table-wrapper
+5. The conteiner for the table-wrapper / .basket-popup
+6. Order details on your account page / .order-details
+
+-------------------------------------------------------------------*/
+
+.basket-table{ // common styles for baskets
+	&>tbody>tr>td,
+	&>tfoot>tr>td{ 
+		text-align: left;
+		padding: 15px;
+		vertical-align: top;
+		font-weight: normal;
+	}
+	&>tbody>tr{
+		transition: .4s;
+		border-bottom: 1px dashed;
+		&:first-child{
+			border-top: 1px dashed #bfb9c3;
+		}
+	}
+
+	.img-container{
+		transition: .4s;
+		min-width: 80px;
+		max-width: 100px;
+		position: relative;
+		text-align: center;
+
+		&:hover{ cursor: pointer;}
+	}
+
+	.item-name a{
+		transition: .4s;
+		@extend %reset-link;
+		font-weight: bold;
+		border-bottom: 1px solid;
+	}
+
+	.price-and-actions, .quantity{
+		.quantity-wrapper{
+			font-weight: normal;
+			display: inline-block;
+			vertical-align: top;
+			width: auto;
+			margin-right: 0;
+		}
+		.out-of-stock-info{ display: none;}
+		
+	}
+	.out-of-stock{
+		.quantity-wrapper{ display: none;}
+		.price-usd{
+			border-bottom: 1px dotted;
+			&:hover{
+				cursor: help;
+			}
+		}
+		.out-of-stock-info{ 
+			display: inline-block;
+			vertical-align: top;
+		}
+		.discount{
+			display: none;
+		}
+	}
+	.out-of-stock-info{
+		text-align: left;
+		width: 90px;
+		.text{
+			text-align: left;
+			margin-top: 0;
+			font-weight: bold;
+			font-size: 12px;
+		}
+		button{
+			@extend %btn-std;
+			border-radius: 3px;
+			&:before{ border-radius: 3px;}
+			font-size: 12px;
+			line-height: 14px;
+			font-weight: bold;
+			padding: 3px 5px;
+		}
+	}
+
+	.price{
+		font-size: 18px;
+		font-weight: bold;
+	}
+}
+
+.basket-big{
+	width: 100%;
+	&>tfoot>tr>td{ 
+		// use of > to target exactly this table
+		// (there is another one, nested inside this)
+		padding-right: 0;
+		padding-top: 30px;
+	}
+	
+	.secondary-data{ width: 30%;}
+	.price-and-actions{
+		width: 50%;
+		.price-type-wrapper{
+			font-size: 12px;
+		}
+		.price-old{
+			display: block;
+		}
+		.discount{
+			width: 90px;
+		}
+
+		text-align: justify;
+		&:after{
+			content: '';
+			height: 0;
+			visibility: hidden;
+			font-size: 0;
+			width: 100%;
+			display: inline-block;
+		}
+	}
+	
+	.img-container{
+		float: left;
+		vertical-align: top;
+		margin-bottom: 5px;
+		margin-right: 7px;
+	}
+	.data-container{
+		display: block;
+		vertical-align: top;
+		margin-left: 5px;
+	}
+	
+	.size-choice, .colors-choice{
+		.text{
+			display: block;
+			margin-bottom: 7px;
+			margin-top: 0;
+		}
+	}
+
+	.colors-choice{
+		.text{ margin-bottom: 10px;}
+	}
+	
+	.price-and-actions > div{
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 5px;
+
+		&.just-quantity{ 
+			display: none;
+			font-weight: bold;
+			font-size: 16px;
+		}
+	}
+
+	.discount{
+		text-align: center;
+		font-size: 14px;
+	}
+
+	.discount-value{ 
+		font-size: 16px;
+		font-weight: bold;
+	}
+	
+	.coupon{
+		float: left;
+		width: 70%;
+
+		label{ display: block;}
+		.label-text{
+			font-weight: normal;
+			margin-right: 10px;
+		}
+		input{
+			display: inline-block;
+			vertical-align: middle;
+			max-width: 300px;
+		}
+
+		@media (max-width: 767px){
+			width: 100%;
+		}
+	}
+	
+	.item-actions{
+		.btn-item-action{
+			display: block;
+		}
+	}
+
+	.buy-block{
+		float: right;
+		text-align: right;
+
+		.btn-buy{
+			clear: both;
+			width: auto;
+		}
+	}
+	.price-info{
+
+		margin-right: 0;
+		margin-left: auto;
+		margin-bottom: 15px;
+		td:first-child{
+			padding-right: 10px;
+		}
+		span{
+			font-weight: bold;
+		}
+	}
+	&.waitlist{
+		.btn-item-action.waitlist{ 
+			opacity: 0;
+			visibility: hidden;
+		}
+	}
+
+	@media (max-width: 1200px){
+		td.main-data{
+			width: 20%;
+		}
+		td.secondary-data{
+			width: 30px;
+		}
+		td.price-and-actions{
+			width: 50%;
+		}
+	}
+
+	@media (max-width: 991px){
+		td.main-data{ width: 25%;}
+		td.secondary-data{ width: 40%;}
+		td.price-and-actions{ width: 35%;}
+	}
+
+	@media (max-width: 767px){
+		.btn-item-action{
+			margin-top: 15px;
+			margin-left: -8px;
+			&:first-child{
+				margin-top: 5px;
+			}
+		}
+		&>tbody>tr{
+			display: block;
+			position: relative;
+		}
+		td.main-data{
+			display: block;
+			width: 50%;
+
+			.img-container{
+				float: none;
+				display: inline-block;
+			}
+			.data-container{
+				 display: inline-block;
+			}
+		}
+		td.secondary-data{
+			display: block;
+			width: 100%;
+			margin-top: 15px;
+		}
+		td.price-and-actions{
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 50%;
+			
+			.price-type-wrapper{ display: none;}
+		}
+
+		.form_coupon{
+			width: 100%;
+			input{
+				width: 100%;
+			}
+		}
+	}
+}/* .basket-big */
+
+.basket-small{
+	width: 100%;
+	&>tbody>tr>td{
+		padding: 5px;
+	}
+
+	&>tbody>tr{
+		&:first-child{
+			border-top: none;
+		}
+		&:last-child{
+			border-bottom: none;
+		}
+		&:hover{
+			cursor: default;
+		}
+	}
+	.tooltip{
+		// width: 100px;
+		.tooltip-inner{
+			font-size: 12px;
+		}
+	}
+	.img-column{
+		padding-left: 5px;
+		@media (max-width: 767px){
+			padding-left: 10px;
+		}
+	}
+
+	.data-container{
+		.item-name,
+		.short-description,
+		.btn-item-action{
+			float: left;
+			clear: left;
+		}
+		.short-description{
+			margin-bottom: 15px;
+		}
+	}
+	.price.quantity{
+
+		padding-right: 15px;
+		width: 125px; // 110px for quantity to fit, and 15 for padding
+		text-align: right;
+		.price-usd{
+			display: inline-block;
+			margin-top: 5px;
+		}
+		.quantity-wrapper{
+			white-space: nowrap;
+			margin-top: 0;
+		}
+		.price-old{
+			display: block;
+			margin-right: 0;
+		}
+	}
+	.out-of-stock-info{
+		.text, button{
+			float: right;
+			clear: right;
+		}
+		button{
+			margin-top: 5px;
+		}
+	}
+}/* .basket-small */
+
+.table-wrapper{
+	position: relative;
+	width: 100%;
+	max-height: 300px;
+
+	overflow: auto;
+	border-bottom: 1px dashed;
+	border-top: 1px dashed;
+
+	@media (max-width: 767px){ 
+		border-top: none;
+	}
+}
+
+.basket-popup{
+	position: absolute;
+	
+	z-index: 3;
+	max-width: 90vw;
+	top: 40px;
+	width: 380px;
+	right: 0;
+	padding: 15px 0;
+	display: block;
+
+	transform-origin: 90% 0;
+	transform: scale(.1,0) translate(30vw,-100vh);
+	opacity: 0.4;
+	transition: transform .4s, opacity .15s;
+	text-align: right;
+	line-height: normal;
+
+	@media (max-width: 767px) {
+		margin-right: -100%;
+	}
+
+	.btn-buy{
+		width: 137px;
+		height: 47px;
+		margin-right: 20px;
+		margin-top: 10px;
+	}
+
+	.total-price{
+		float: left;
+		margin-left: 15px;
+		margin-top: 10px;
+		font-size: 14px;
+		.price-usd{
+			font-size: 18px;
+			font-weight: bold;
+		}
+	}
+
+	.um_container-opened & {
+		transform: scale(1) translate(0);
+		opacity: 1;
+	}
+}/* .basket-popup */
+
+
+.order-details{
+	position: absolute;
+	z-index: 1;
+
+	.um_popup-content{
+		display: none;
+		border: 1px solid;
+		position: relative;
+		z-index: 1;
+		padding-bottom: 30px;
+		.popup-header{
+			text-align: center;
+		}
+
+		.popup-body{
+			max-height: 400px;
+			overflow: auto;
+		}
+		
+		.total-price{
+			display: inline-block;
+			margin-left: 15px;
+			margin-top: 10px;
+			font-size: 14px;
+			.price-usd{
+				font-size: 18px;
+				font-weight: bold;
+			}
+		}
+
+
+
+		&:before, &:after{
+			position: absolute;
+			content: '';
+			border: solid;
+
+			
+		}
+
+		/* arrows drawing */
+		&.arrow-left:before, &.arrow-left:after{
+			border-width: 12px;
+			top: 35px;
+			right: 100%;
+		}
+		&.arrow-left:after{ margin-right: -1px;}
+
+		&.arrow-top:before, &.arrow-top:after{
+			border-width: 12px;
+			bottom: 100%;
+			left: 50px;
+		}
+		&.arrow-top-middle:before, &.arrow-top-middle:after{ 
+			left: 125px;
+		}
+		
+		&.arrow-top:after{ margin-bottom: -1px;}
+		/* finishing arrows drawing */
+	}
+		
+	&.um_container-opened{ 
+		display: block;
+	}
+	
+	width: 100%;
+	max-width: 400px;
+	
+}
